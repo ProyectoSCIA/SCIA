@@ -6,17 +6,17 @@ class Docente(models.Model):
     	primary_key = True,
     	)
 
-    Id_Personales_Docente = models.ForeingKey('Datos_Personales_Docente'
-        on_delete=models.CASCADE
+    Id_Personales_Docente = models.ForeignKey('Datos_Personales_Docente',
+        on_delete=models.CASCADE,
     	)
 
-    Cedula_Personal = models.ForeingKey('Datos_Docente'
-        on_delete=models.CASCADE
+    Cedula_Personal = models.ForeignKey('Datos_Docente',
+        on_delete=models.CASCADE,
         )
 
-    Clave_Disciplina = models.ForeingKey('Disciplinas'
-        on_delete=models.CASCADE
+    Clave_Disciplina = models.ForeignKey('Disciplinas',
+        on_delete=models.CASCADE,
         )
 
-        def __str__(self):
+def __str__(self):
         return '%s %s %s' % (self.Id_Personales_Docente, self.Cedula_Personal, self.Clave_Disciplina)

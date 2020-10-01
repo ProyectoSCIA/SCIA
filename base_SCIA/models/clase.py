@@ -6,16 +6,16 @@ class Clase(models.Model):
     	primary_key = True,
     	)
 
-    Id_Docente = models.ForeingKey('Docente'
-        on_delete=models.CASCADE
+    Id_Docente = models.ForeignKey('Docente',
+        on_delete=models.CASCADE,
     	)
 
-    Id_Estudiante = models.ForeingKey('Estudiante'
-        on_delete=models.CASCADE
+    Id_Estudiante = models.ForeignKey('Estudiante',
+        on_delete=models.CASCADE,
         )
 
-    Clave_Disciplina = models.ForeingKey('Disciplinas'
-        on_delete=models.CASCADE
+    Clave_Disciplina = models.ForeignKey('Disciplinas',
+        on_delete=models.CASCADE,
         )
 
     def __str__(self): # __unicode__ en Python 2

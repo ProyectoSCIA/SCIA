@@ -4,7 +4,6 @@ class Datos_Academicos(models.Model):
 
 	Matricula = models.IntegerField(
 	        primary_key= True, 
-	        max_length = 8,
 	        default="",
 	    )
 
@@ -29,10 +28,10 @@ class Datos_Academicos(models.Model):
 	    )
 
 	Promedio_General = models.DecimalField (
-		..., max_digits = 5, decimal_places = 2
+		..., max_digits = 5, decimal_places = 2,
 	    )
 	    
 
 
-  def __str__(self): # __unicode__ en Python 2
+def __str__(self):
         return '%s %s %s %s %s ' % (self.Grado, self.Grupo, self.Inscrito, self.Estatus, self.Promedio_General)

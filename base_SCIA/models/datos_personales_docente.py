@@ -12,7 +12,7 @@ class Datos_Personales_Docente(models.Model):
     Genero = models.CharField(max_length=2, 
     	)
 
-    Edad = models.IntegerField(, 
+    Edad = models.IntegerField(
     	)
 
     Telefono = models.IntegerField(
@@ -30,7 +30,7 @@ class Datos_Personales_Docente(models.Model):
     Grupo_Sanguineo = models.CharField(max_length=3, 
     	)
 
-    def __str__(self):
+def __str__(self):
         return '%s %s %s %s %s %s %s %s' % (self.Nombre_Completo, self.Genero, self.Edad,
-        self.Telefono, self.Direccion, self.Codigo_Postal
+        self.Telefono, self.Direccion, self.Codigo_Postal,
         self.Correo_Electronico, self.Grupo_Sanguineo)

@@ -13,8 +13,8 @@ class Disciplinas(models.Model):
         ..., max_digits = 5, decimal_places = 2
         )
 
-    Acreditacion = models.IntegerField(max_length=20, 
+    Acreditacion = models.IntegerField(
     	)
 
-        def __str__(self):
-        return '%s %s %s' % (self.Nombre, self.Calificacion, self.Acreditacion)
+def __str__(self):
+        return "("+str(self.Nombre) + "," +str(self.Calificacion)+ ","+str(self.Acreditacion)+")"

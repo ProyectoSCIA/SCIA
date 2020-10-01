@@ -6,7 +6,7 @@ class Disciplinas_Cursadas(models.Model):
     	primary_key = True,
     	)
 
-    Clave_Discipina = models.ForeingKey('Disciplinas'
+    Clave_Discipina = models.ForeignKey('Disciplinas',
         on_delete=models.CASCADE
         )
 
@@ -14,8 +14,8 @@ class Disciplinas_Cursadas(models.Model):
     	)
 
     Calificacion = models.DecimalField (
-        ..., max_digits = 5, decimal_places = 2
+         max_digits = 5, decimal_places = 2,
         )
 
-        def __str__(self):
+def __str__(self):
         return '%s %s %s' % (self.Clave_Discipina, self.Nombre, self.Calificacion)

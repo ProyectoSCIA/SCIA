@@ -18,7 +18,7 @@ class Datos_Procedencia(models.Model):
 	..., max_digits = 5, decimal_places = 2
     )
     
-      def __str__(self): # __unicode__ en Python 2
+def __str__(self):
         return '%s %s %s' % (self.Nivel_Basico, self.Año_Egreso, self.Promedio)
 
 
