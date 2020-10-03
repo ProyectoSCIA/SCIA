@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base_aspirantes/css/preguntas.css' %}">
+</head>
+<body style="padding: 20px">
+  <header>
+      {% include 'encabezado.html'%}
+  </header>
+  <div class="tabContainer">
+    <div class="buttonContainer">
+  
+     <button id="but" onclick="showPanel(1,'#7dcea0')" > <p>Tiempo restante: 
+          <label id = "tiem">40:00</label></p></button>
+</div>
+
+<form name="formulario" method="POST" enctype="multipart/form-data">
+    <!-- Pensamiento matemático -->
+    <div class="tabPanel"> 
+<h3> <b> Preguntas Pensamiento matematico </b></h3> 
+         <br>
+     {% for carrer_gpm in carrer_gpm %}  
+     {% if carrer_gpm.grupo_clave.clave_grupo == 'PM' %}
+          <p style="background-color: #FF4CBE "> <b> {{carrer_gpm.pregunta}} </b></p> 
+      <br>
+           <form action="" method="post" target="_blank">
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="a"> .- &#160 {{ carrer_gpm.respuesta_examen_a}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="b"> .- &#160 {{ carrer_gpm.respuesta_examen_b}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="c"> .- &#160 {{ carrer_gpm.respuesta_examen_c}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="d"> .- &#160 {{ carrer_gpm.respuesta_examen_d}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="e"> .- &#160 {{ carrer_gpm.respuesta_examen_e}} <br> 
+    </form>
+      <br>
+      <br>
+    {% endif %}
+    {% endfor %}
+    </div>
+</form>
+
+</body>
+   
+<br>
+<center><button onclick="location.href='http://127.0.0.1:8000/gastronomia_cl/'" >Siguiente</button></center>
+<br>
+        <script src="{% static 'base_aspirantes/js/tem.js' %}"> </script>
+        <script src="{% static 'base_aspirantes/js/bot.js' %}"> </script>
+        <script src="{% static 'base_aspirantes/js/b.js' %}"> </script>
+        <script src="{% static 'base_aspirantes/js/preguntas.js' %}"></script>
+     <footer>
+       {% include 'footer.html'%}  
+     </footer>
+
+</html>

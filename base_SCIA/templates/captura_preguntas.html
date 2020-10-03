@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base_aspirantes/css/preguntas.css' %}">
+</head>
+<body style="padding: 20px">
+  <header>
+      {% include 'encabezado.html'%}
+</header>
+<div class="tabContainer" >
+    <div class="buttonContainer" >
+        <button onclick="showPanel(0,'#f8c471')">Ingeniería</button>
+        <button onclick="showPanel(1,'#f8c471')">Gastronomía</button>
+        <button onclick="showPanel(2,'#f8c471')">Cuestionario</button>
+    </div>
+    <br>
+    <!-- formulario para las preguntas de ingenieria-->
+    <form name="ingenieria" method="POST" enctype="multipart/form-data">
+        <div class="tabPanel"> 
+            <label>
+                Número
+                <input type="number" name="num_ing" readonly="True">
+            </label>
+            <br>
+          <div>
+            <label>
+                Escriba la pregunta:<br>
+                <p><textarea name="pregunta_ing" placeholder="Escribe la pregunta" cols="70" rows="5"></textarea></p>
+            </label>
+          </div>
+            <label>
+                Si existe un contexto agréguelo en este apartado:<br>
+                <p><textarea name="contexto" placeholder="Ejemplo de contexto de una pregunta " cols="70" rows="5"></textarea></p>
+                <input type="file" name="imagen">
+            </label>
+            <br>
+            <h2><strong> Respuestas a pregunta:</strong></h2>
+            <br>
+            <div>
+            <label>
+                A )
+                <input type="text" name="a" placeholder="Respuesta A">
+            </label>
+            <input type="file" name="imagen_a">
+            </div>
+            <br>
+            <label>
+                B )
+            <input type="text" name="b" placeholder="Respuesta B">
+            </label>
+                <input type="file" name="imagen_b">
+                <br>
+           <label>
+               C )
+               <input type="text" name="c" placeholder="Respuesta C">
+           </label>
+                <input type="file" name="imagen_c">
+                <br>
+           <label>
+               D )
+               <input type="text" name="d" placeholder="Respuesta D ">
+           </label>
+               <input type="file" name="imagen_d">
+               <br>
+           <label>
+               E )
+               <input type="text" name="e" placeholder="Respuesta E">
+           </label>
+                <input type="file" name="imagen_e">
+                <br>
+           <label>
+               F )
+               <input type="text" name="f" placeholder="la respuesta F.... ">
+           </label>
+              <input type="file" name="imagen_f">
+              <br>
+              <br>
+           <input type="submit" value="Guardar">
+           
+</div>
+</form>
+
+<!--SIGUIENTE PPESTAÑA PARA PREGUNTAS DE GASTRO-->
+<form name="ingenieria" method="POST" enctype="multipart/form-data">s
+<div class="tabPanel">
+<label>
+            <label>
+                Número
+                <input type="number" name="no_pregunta" readonly="True">
+            </label>
+            <br>
+          <div>
+            <label>
+                Escriba la pregunta:<br>
+                <p><textarea name="pregunta" placeholder="Escribe la pregunta" cols="70" rows="5"></textarea></p>
+            </label>
+          </div>
+            <label>
+                Si existe un contexto agréguelo en este apartado:<br>
+                <p><textarea name="contexto" placeholder="Ejemplo de contexto de una pregunta " cols="70" rows="5"></textarea></p>
+                <input type="file" name="imagen">
+            </label>
+            <br>
+            <h2><strong> Respuestas a pregunta:</strong></h2>
+            <br>
+            <div>
+            <label>
+                A )
+                <input type="text" name="a" placeholder="Respuesta A">
+            </label>
+            <input type="file" name="imagen">
+            </div>
+            <br>
+            <label>
+                B )
+            <input type="text" name="b" placeholder="Respuesta B">
+            </label>
+                <input type="file" name="imagen">
+                <br>
+           <label>
+               C )
+               <input type="text" name="c" placeholder="Respuesta C">
+           </label>
+                <input type="file" name="imagen">
+                <br>
+           <label>
+               D )
+               <input type="text" name="d" placeholder="Respuesta D ">
+           </label>
+               <input type="file" name="imagen">
+               <br>
+           <label>
+               E )
+               <input type="text" name="e" placeholder="Respuesta E">
+           </label>
+                <input type="file" name="imagen">
+                <br>
+           <label>
+               F )
+               <input type="text" name="f" placeholder="la respuesta F.... ">
+           </label>
+              <input type="file" name="imagen">
+              <br>
+              <br>
+           <input type="submit" value="Guardar">
+</div>
+</form>
+<!--SIGUIENTE PPESTAÑA PARA PREGUNTAS DEL CUESTIONARIO-->
+<form name="ingenieria" method="POST" enctype="multipart/form-data">
+<div class="tabPanel">
+            <label>
+                Número
+                <input type="number" name="no_pregunta" readonly="True">
+            </label>
+            <br>
+          <div>
+            <label>
+                Escriba la pregunta:<br>
+                <p><textarea name="pregunta" placeholder="Escribe la pregunta" cols="70" rows="5"></textarea></p>
+            </label>
+          </div>
+            <br>
+            <h2><strong> Respuestas a pregunta:</strong></h2>
+            <br>
+            <div>
+            <label>
+                A )
+                <input type="text" name="a" placeholder="Respuesta A">
+            </label>
+            </div>
+            <br>
+            <label>
+                B )
+            <input type="text" name="b" placeholder="Respuesta B">
+            </label>
+                <br>
+           <label>
+               C )
+               <input type="text" name="c" placeholder="Respuesta C">
+           </label>
+                <br>
+           <label>
+               D )
+               <input type="text" name="d" placeholder="Respuesta D ">
+           </label>
+               <br>
+           <label>
+               E )
+               <input type="text" name="e" placeholder="Respuesta E">
+           </label>
+                <br>
+           <label>
+               F )
+               <input type="text" name="g" placeholder=" Respuesta F">
+           </label>
+              <br>
+          <label>
+               G )
+               <input type="text" name="h" placeholder=" Respuesta F">
+           </label>
+              <br>
+          <label>
+               H )
+               <input type="text" name="i" placeholder="Respuesta H">
+           </label>
+              <br>
+          <label>
+               I )
+               <input type="text" name="f" placeholder="Respuesta I">
+           </label>
+              <br>
+              <br>
+           <input type="submit" value="Guardar">
+</form>
+</div>
+
+<script src="{% static 'base_aspirantes/js/preguntas.js' %}"></script>
+{% include 'footer.html'%}
+</body>
+
+</html>

@@ -23,5 +23,5 @@ class Disciplinas_Cursando(models.Model):
 		max_length = 2,
 	)
 	
-	def __str__(self): # __unicode__ en Python 2
+	def __str__(self):
 		return '%s %s %s %s' % (self.Clave_Disciplina, self.Nombre, self.Grado, self.Grupo)

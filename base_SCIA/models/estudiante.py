@@ -31,5 +31,6 @@ class Estudiante(models.Model):
 		on_delete=models.CASCADE,
 	)
 
-def __str__(self): # __unicode__ en Python 2
-		return '%s %s %s %s %s' % (self.Id_Personales, self. Id_Cursando, self.Id_Tutor, self.Id_Procedencia, self.Matricula)
+def __str__(self):
+		return '%s %s %s %s %s' % (self.Id_Personales, self. Id_Cursando,
+			self.Id_Tutor, self.Id_Procedencia, self.Matricula)

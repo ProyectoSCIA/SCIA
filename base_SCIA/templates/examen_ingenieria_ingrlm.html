@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base_aspirantes/css/preguntas.css' %}">
+</head>
+<body style="padding: 20px">
+  <header>
+      {% include 'encabezado.html'%}
+  </header>
+<div class="tabContainer">
+    <div class="buttonContainer">
+     <button id="ing3" onclick="showPanel(0,'#7dcea0')" > <p>Tiempo restante: 
+     <label id = "tiempo3">40:00</label></p></button>
+     
+    
+   
+    </div>
+<form name="formulario" method="POST" enctype="multipart/form-data">
+    <!-- Razonamiento Logico - Matematico -->
+    <div class="tabPanel"> 
+           <h3> <b> Preguntas de Razonamiento Logico</b></h3> 
+         <br>
+     {% for carrer_ingrlm in carrer_ingrlm %}  
+     {% if carrer_ingrlm.grupo_clave.clave_grupo == 'RLM' %}
+          <p style="background-color: #F8CB90 "> <b> {{carrer_ingrlm.pregunta}} </b></p> 
+      <br>
+        <form action="" method="post" target="_blank">
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="a"> .- &#160 {{ carrer_ingrlm.respuesta_examen_a}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="b"> .- &#160 {{ carrer_ingrlm.respuesta_examen_b}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="c"> .- &#160 {{ carrer_ingrlm.respuesta_examen_c}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="d"> .- &#160 {{ carrer_ingrlm.respuesta_examen_d}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="e"> .- &#160 {{ carrer_ingrlm.respuesta_examen_e}} <br> 
+      </form> 
+      <br>
+      <br>
+    {% endif %}
+    {% endfor %}
+    </div>
+    </form>
+
+
+
+
+</body>
+      
+       <br>
+       <center><button onclick="location.href='http://127.0.0.1:8000/ingenieria_ingrv/'" >Siguiente</button></center>
+       <br>
+
+       <script src="{% static 'base_aspirantes/js/tiempo3.js' %}"> </script>
+        <script src="{% static 'base_aspirantes/js/inge3.js' %}"> </script>
+        <!--<script src="{% static 'base_aspirantes/js/b.js' %}"> </script>-->
+        <script src="{% static 'base_aspirantes/js/preguntas.js' %}"></script>
+     <footer>
+       {% include 'footer.html'%}  
+     </footer>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/datos_estudiante.css'%}" type="text/css" media="all" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/bootstrap.css'%}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/bootstrap.min.css'%}" type="text/css" media="all" />
+    <script type="text/javascript" href="{% static 'base_aspirantes/js/boostrap.js'%}"></script>
+    <script type="text/javascript" href="{% static 'base_aspirantes/js/boostrap.min.js'%}"></script>
+
+  <title>Datos básicos de aspirante</title>
+</head>
+<body align="center">
+{%include 'encabezado.html'%}
+
+ <div class="container" style="width: 70%;">
+        <div id="loginbox" style="margin-top:50px;">
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title" align="center"><h1>Datos del Aspirante</h1></div>
+                        <div class="panel-title" align="center"> <h3>
+                        {% for carrera in carrera %}
+                            {{carrera.nombre_carrera}}
+                        {% endfor %}
+                        </h3>
+                        </div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px;">
+                    </div>
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" class="alert alert-danger col-sm-12"></div>
+                        <form id="loginform" class="form-horizontal" role="form">
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon"> Número de Ficha</i></span>
+                                        <input type="text" class="form-control" value="" placeholder="Numero de Ficha">
+                                    </div>
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon"> Nombre(s)</i></span>
+                                        <input type="text" class="form-control" value="" placeholder="Nombre(s)">
+                                    </div>
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon"> Apellido Paterno</i></span>
+                                        <input type="text" class="form-control" value="" placeholder="Apellido Paterno">
+                                    </div>
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon"> Apellido Materno</i></span>
+                                        <input type="text" class="form-control" value="" placeholder="Apellido Materno">
+                                    </div>
+
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon"> Fecha de Nacimiento</i></span>
+                                        <input type="text" class="form-control" value="" placeholder="dia/mes/año">
+                                    </div>
+                                    <div style="margin-bottom: 25px" align="center">
+                                        <div class="col-sm-12 controls">
+                                          <a id="btn-login" href="#" class="btn btn-success">Guardar Datos </a>
+                                          <a id="btn-login" href="#" class="btn btn-success">Guardar Datos </a>
+                                        </div>
+                                          </div>
+
+
+
+                             <!----Encuesta---->
+
+                             <h1 align="center">Encuesta</h1>
+                             <span class="input-group-addon"><i class="glyphicon glyphicon">¿Cuáles fueron las actividades que se realizaron en tu bachillerato,<br>
+                             por parte el ITST?</i></span>
+                             <section>
+                               <div class="input-group1">
+                                          <div class="checkbox">
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Plática en tu bachillerato 
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Grupos representativos (Danza y Rondalla)
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Visitas guiadas
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Conferencias
+                                            </label>
+                                          </div>
+                                        </div>
+                              </section>
+
+                             <span class="input-group-addon"><i class="glyphicon glyphicon"> ¿Cómo te enteraste de la inscripción?</i></span>
+                               <div class="input-group1">
+                                          <div class="checkbox">
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Amigos o Familiares
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Visita a la Institución
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Publicidad en Radio
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Publicidad online
+                                            </label>
+                                          </div>
+                                        </div>
+                             <span class="input-group-addon"><i class="glyphicon glyphicon"> ¿Realizaste examen en alguna otra institución de nivel superior?</i></span>
+                               <div class="input-group1">
+                                          <div class="checkbox">
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Si
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> No
+                                            </label>
+                                            <br>
+                                        <label>¿Cuál?</label>
+                                        <input type="text" class="form-control" value="" placeholder="" align="center">
+                                        </div>
+
+                                          </div>
+                                        </div>
+
+                                         <span class="input-group-addon"><i class="glyphicon glyphicon"> ¿Cuál fue el motivo por el cual elegiste estudiar en el ITST?</i></span>
+                               <div class="input-group1">
+                                          <div class="checkbox">
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Cercanía con tu lugar de procedencia
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Economía familiar
+                                            </label>
+                                            <br>
+                                            <label>
+                                              <input id="login-remember" type="checkbox" name="remember" value="1"> Tener la carrera de mi preferencia
+                                            </label>
+                                            <br>
+
+                                            <label> Otros</label>
+                                                <input type="text" class="form-control" value="" placeholder="" align="center">
+                                            <br>
+                                        <div style="margin-bottom: 25px" align="center">
+                                        <div class="col-sm-12 controls">
+                                          <a id="btn-login" href="#" class="btn btn-success">Guardar Datos </a>
+                                        </div>
+                                        <br>
+                                          </div>
+                                        </div>
+                            </form>
+                        </div>
+                    </div>
+        </div>
+    {%include 'footer.html'%}
+</body>
+<br>
+</html>

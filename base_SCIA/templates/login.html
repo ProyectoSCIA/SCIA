@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head tyle="background-color: #E1EEE9;">
+	<title>SCIA</title>
+	{%load static%}
+	{%include 'encabezado.html'%}
+</head>
+<body style="background-color: #FFFFD1;">
+	<br>
+	<br>
+	<div align="center">
+		<div class="ajustarT" align="center" style="background-color: #E1EEE9; width: 400px">
+			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+				<div lass="imgcontainer" align="center">
+					<h2 > <b><img src="{%static 'base_aspirantes/images/encabezado/acceso.png'%}" alt="acceso"  align="center" width="40px" height="40px">Acceso</b></h2>
+				</div>
+	<br>
+	<br>
+	<label for="uname"><b>Usuario </b></label>
+	<div align="center">
+		<img src="{%static 'base_aspirantes/images/encabezado/usuario.png'%}" alt="usuario"  align="center" width="25px" height="25px"> 
+        <input type="text" placeholder="Enter Usuario" name="uname" required>
+	</div>
+	<br>
+	<br>
+	<label><b>Contraseña</b></label>
+	<div >
+		<img src="{%static 'base_aspirantes/images/encabezado/contraseña.png'%}" alt="contraseña"  align="center" width="25px" height="25px">
+          <input type="password" placeholder="Enter Password" name="psw" required> 
+	</div>
+	<a href="#">¿Olvido su contraseña?</a>
+    <br>
+    <br>
+    <button onclick="location.href='http://127.0.0.1:8000'" type="submit" align="center" style="background-color: #DC971A;">Ingresar</button>
+    <label> <input type="checkbox" checked="checked" name="remember"> Recordar Contraseña</label>
+        
+    <br>
+    <br>
+   			 </form>
+   		</div>
+	</div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

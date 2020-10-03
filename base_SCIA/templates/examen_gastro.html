@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base_aspirantes/css/preguntas.css' %}">
+</head>
+<body style="padding: 20px">
+  <header>
+      {% include 'encabezado.html'%}
+  </header>
+<div class="tabContainer">
+    <div class="buttonContainer">
+     <button id="boton" onclick="showPanel(0,'#7dcea0')" > <p>Tiempo restante: 
+          <label id = "tiempo">60:00</label></p></button>
+     
+    
+   
+    </div>
+ 
+<form name="formulario" method="POST" enctype="multipart/form-data">
+
+    <!--Pensamiento analítico-->
+    <div class="tabPanel"> 
+         <h3> <b> Preguntas Pensamiento Analitico </b></h3> 
+         <br>
+     {% for carrer in carrer %}  
+     {% if carrer.grupo_clave.clave_grupo == 'PA' %}
+          <p style="background-color: #F8CB90 "> <b> {{carrer.pregunta}} </b></p> 
+      <br>
+       <form action="" method="post" target="_blank">
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="a"> .- &#160 {{ carrer.respuesta_examen_a}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="b"> .- &#160 {{ carrer.respuesta_examen_b}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="c"> .- &#160 {{ carrer.respuesta_examen_c}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="d"> .- &#160 {{ carrer.respuesta_examen_d}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="e"> .- &#160 {{ carrer.respuesta_examen_e}} <br>  
+ </form>
+      <br>
+      <br>
+    {% endif %}
+    {% endfor %}
+    </div>
+  </form>
+
+</body>
+<br>
+<center><button onclick="location.href='http://127.0.0.1:8000/gastronomia_el/'" >Siguiente</button></center>
+<br>
+<script src="{% static 'base_aspirantes/js/tempo.js' %}"> </script>
+<script src="{% static 'base_aspirantes/js/desactivar.js' %}"> </script>
+<script src="{% static 'base_aspirantes/js/b.js' %}"> </script>
+<script src="{% static 'base_aspirantes/js/preguntas.js' %}"></script>
+{% include 'footer.html'%}   
+</html>

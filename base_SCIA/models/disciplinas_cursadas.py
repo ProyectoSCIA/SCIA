@@ -2,20 +2,20 @@ from django.db import models
 
 class Disciplinas_Cursadas(models.Model):
 	
-    Id_Cursadas = models.AutoField(
-    	primary_key = True,
-    	)
+	Id_Cursadas = models.AutoField(
+		primary_key = True,
+		)
 
-    Clave_Discipina = models.ForeignKey('Disciplinas',
-        on_delete=models.CASCADE
-        )
+	Clave_Discipina = models.ForeignKey('Disciplinas',
+		on_delete=models.CASCADE
+		)
 
-    Nombre = models.CharField(max_length=30,
-    	)
+	Nombre = models.CharField(max_length=30,
+		)
 
-    Calificacion = models.DecimalField (
-         max_digits = 5, decimal_places = 2,
-        )
+	Calificacion = models.DecimalField (
+		max_digits = 5, decimal_places = 2,
+		)
 
 def __str__(self):
-        return '%s %s %s' % (self.Clave_Discipina, self.Nombre, self.Calificacion)
+		return '%s %s %s' % (self.Clave_Discipina, self.Nombre, self.Calificacion)

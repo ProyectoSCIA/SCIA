@@ -1,0 +1,43 @@
+#parte1{
+
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+  padding: auto;
+  background-color: #DC971A;
+  text-align: center;
+
+}
+
+#parte2{
+
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+  padding: auto;
+  background-color: #DC971A;
+  text-align: center;
+
+}
+
+.titulo{
+  font-family: "Roboto";
+  color: white;
+}
+
+.terminos{
+  width: auto;
+  margin: auto;
+  text-align: left;
+  border: 2px solid black;
+}
+
+
+h3{
+  font-family: oblique bold 120% cursive;
+  color: rgb(0, 0, 0, 0.87);
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.5s;
+  margin: 0;
+  padding: 0;
+}

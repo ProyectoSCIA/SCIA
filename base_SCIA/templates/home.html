@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base_aspirantes/home.css'%}" type="text/css" media="all" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/bootstrap.css'%}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/bootstrap.min.css'%}" type="text/css" media="all" />
+    <script type="text/javascript" href="{% static 'base_aspirantes/js/boostrap.js'%}"></script>
+    <script type="text/javascript" href="{% static 'base_aspirantes/js/boostrap.min.js'%}"></script>
+</head>
+
+<body>
+    {%include 'encabezado.html'%}
+</nav>
+    <br>
+    <section id="parte1" style="background-color: #F4F6F6;">
+    <div class="container">
+        <div class="row text-righ">
+        <div class="terminos">
+            <h4>La información recabada será usada con fines estadísticos por lo que  está no será utilizada por terceros, esta usted  de acuerdo con la utilización de estos datos.
+            <br>
+            <label>
+                <strong> Acepto que mis  datos sean usados  para estos fines.  </strong> &nbsp; <input id="login-remember" type="checkbox" name="remember" required="True" >  
+            </label>
+        </div>
+        </div>
+        <div class="pb-5"></div>
+        <div class="row text-center">
+        <div class="col-md-4">
+        <div class="card" style="width: ;">
+        <div class="card-body">
+        <div class="sub-row pb-4">                 
+        </div><!--tics-->
+            <div  style="background-color: #E1EEE9;">
+            <article id="tics">
+                <strong><!-- Leyenda -->
+                    <h1 align="center" class="titulo">Ingeniería en Tecnologías de la Información y Comunicaciones</h1>
+                </strong>
+            </div>
+            <br> <!-- imagen tics -->
+                <img src="{%static 'base_aspirantes/images/IMG_1490.JPG'%}" style="width:60%" >
+            <br>
+            <br>
+            <p class="card-text">
+                <h3 align="center">¿Qué hace un Ingeniero en Tecnologías de la Información y Comunicaciones?</h3>
+                <h4 align="left">
+                    <br>
+                    - Crear empresas en el ámbito de Tecnologías de Información y Comunicaciones.
+                    <br><br>
+                    - Integrar  diferentes arquitecturas de hardware y sofware.
+                    <br><br> 
+                    - Administrar plataformas de software.
+                </h4>
+            </p>
+            <br>
+                <h2 align="center">
+                Áreas Laborales
+                </h2>
+                <br>
+                         <h4 align="left">
+                             - Analista de seguridad de información.
+                             <br><br>
+                             - Administrador de redes y sistemas informáticos.
+                             <br><br>
+                             - Desarrollador de software.
+                         </h4>
+                        <br>
+                        <br>
+                        <form align="center" method="get" action="estudiantes/">
+                        <div align="center">
+                            <input type="hidden" name="carrera" value="tics">
+                             <label>
+                                <input type="submit" value="Seleccionar">
+                            </label>
+                        </div>
+                        </form>
+                    </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card" style="width: ;">
+            <div class="card-body">
+            <div class="sub-row pb-4">   
+            </div>
+            </article>
+            <article><!--sistemas-->
+                <div style="background-color: #E74C3C;">
+                    <strong>
+                        <h1 align="center" class="titulo" font color="white;">Ingeniería en Sistemas Computacionales</h1> <!-- Leyenda -->
+                        <br>
+                        <br>
+                    </strong>
+                </div>
+                <br>
+                <!--imagen sistemas-->
+                <img src="{%static 'base_aspirantes/images/IMG_2969.JPG'%}" style="width:60%" >
+                <br>
+                <br>
+                <p class="card-text">
+                <h3 align="center">
+                    ¿Qué hace un Ingeniero en Sistemas Computacionales?
+                </h3>
+                <br>
+                    <h4 align="left">
+                        - Diseñar, programar, aplicar y mantener sistemas informáticos.
+                        <br><br>
+                        - Administrar redes y Sistemas de Información.
+                        <br> <br>
+                        - Diseñar y mantener sitios web.
+                    </h4> 
+                </p>
+                <br>
+                <br>
+                <h2 align="center">
+                    Áreas Laborales
+                </h2>
+                <br>
+                    <h4 align="left">
+                        - Jefe de proyectos de sistemas.
+                        <br><br>
+                        - Consultor informático.
+                        <br><br>
+                        - Constructor de Sistemas Informáticos.
+                    </h4>
+                <br>
+                <br>
+                <form align="center" method="get" action="estudiantes/">
+                <div align="center">
+                    <input type="hidden" name="carrera" value="sist">
+                    <label>
+                        <input type="submit" value="Seleccionar">
+                    </label>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="card" style="width: ;">
+        <div class="card-body">
+        <div class="sub-row pb-4"> 
+        </div>
+        </article>
+        <div style="background-color: #f9e79f;">
+            <article> <!--alimentos-->
+                <strong>
+                    <h1 align="center" class="titulo">
+                    Ingeniería en Industrias Alimentarias
+                    </h1>
+                    <br>
+                    <br>
+                </strong>
+        </div>
+        <br>
+        <br>
+        <!--imagen alimentos-->
+        <img src="{% static 'base_aspirantes/images/IMG_20190115_104948.jpg' %}" style="width:60%" >
+        <br>
+        <br>
+        <br>
+            <p class="card-text">
+                <h3 align="center">
+                ¿Qué hace un Ingeniero en Industrias Alimentarias?
+                </h3>
+                    <h4 align="left">
+                        <br><br>
+                        - Produce alimentos nutricios.
+                        <br><br>
+                        - Optimiza procesos y recursos.
+                        <br><br>
+                        - Evaluación de proyectos y capacitaciones.
+                        <br><br>
+                        - Inspecciona, controla y evalua procesos alimentarios.
+                    </h4>
+
+                    <h2 align="center">
+                    Áreas Laborales
+                    </h2>
+                    <br>
+                        <h4 align="left">
+                            - Centros de almacenamiento y transporte.
+                            <br><br>
+                            - Investigación y desarrollo de productos.
+                            <br><br>
+                            - Empresas de lácteos, aves y pescado.
+                        </h4>
+                    </p>
+                    <form align="center" method="get" action="estudiantes/">
+                    <div align="center">
+                    <input type="hidden" name="carrera" value="alim">
+                    <label>
+                        <input type="submit" value="Seleccionar">
+                    </label>
+                </div>
+                </form>
+                </div>
+            </article>
+        </div>
+        
+    </div>
+</div>
+
+<!-------------espacion entre secciones------------------>
+
+<!--segunda seccion-->
+<section id="parte2">
+    <div class="container">
+        
+    <div class="pb-5"></div>
+    <div class="row text-center">
+    <div class="col-md-4">
+    <div class="card" style="width: ;">
+    <div class="card-body">
+    <div class="sub-row pb-4">    
+    </div>
+        <div style="background-color: #d2b4de;">
+            <article><!--gestion empresarial-->
+                <strong>
+                    <h1 align="center" class="titulo">
+                    Ingeniería en Gestión Empresarial
+                    </h1>
+                </strong>
+        </div>
+        <br>
+        <!--imagen gestion empresarial-->
+        <img src="{%static 'base_aspirantes/images/IMG_1118.JPG'%}" style="width:60%" >
+        <br>
+            <p class="card-text">
+                <h3 align="center">
+                ¿Qué hace un Ingeniero en Gestión Empresarial?
+                </h3>
+                <br>
+                <h4 align="left">
+                    - Emprender y desarrollar negocios.
+                    <br><br>
+                    - Administrar organizaciones desde la gestión de Recursos Humanos y Financieros.
+                    <br><br>
+                    - Analizar problemas desde una perspectiva estrategica, con el fin de soluciones óptimas a la empresa.
+                </h4>
+                <p>
+                <br>
+                <h2 align="center">
+                Áreas Laborales
+                </h2>
+                <br>
+                <h4 align="left">
+                    - Administración.
+                    <br><br>
+                    - Área comercial.
+                    <br><br>
+                    - Departamento financiero.
+                    <br><br>
+                    - Mercadotecnia.
+                    <br><br>
+                    - Recursos Humanos.
+                </h4>
+                <br>
+                <form align="center" method="get" action="estudiantes/">
+                <div align="center">
+                    <input type="hidden" name="carrera" value="gest">
+                    <label>
+                        <input type="submit" value="Seleccionar">
+                    </label>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="card" style="width: ;">
+        <div class="card-body">
+        <div class="sub-row pb-4">    
+        </div>
+        </article>
+        <div style="background-color:  #76d7c4">
+            <article> <!--industrial-->
+                <strong>
+                    <h1 align="center" class="titulo">
+                    Ingeniería Industrial
+                    </h1>
+                    <br>
+                    <br>
+                </strong>
+        </div>
+        <br>
+        <!--imagen industrial-->
+        <img src="{%static 'base_aspirantes/images/e10.JPG'%}" style="width:60%" >
+        <br>
+        <p class="card-text">
+            <h3 align="center">
+            ¿Qué hace un Ingeniero Industrial?
+            </h3>
+            <br>
+                <h4 align="left">
+                    - Ayuda a mejorar los resultados costo-beneficio de una compañia.
+                    <br><br>
+                    - Gestiona eficientemente su propia empresa.
+                    <br><br>
+                    - Busca la mejora de los procesos productivos de alta calidad.
+                </h4> 
+        </p>
+        <br>
+        <br>
+            <h2 align="center">
+            Áreas Laborales
+            </h2>
+            <br>
+                <h4 align="left">
+                    - Analista de procesos.
+                    <br><br>
+                    - Jefe de planta.
+                    <br><br>
+                    - Supervisión de producción.
+                    <br><br>
+                    - Encargado administrativo.
+                    <br><br>
+                    - Encargado operativo.
+                </h4>
+                <br>
+                    <form align="center" method="get" action="estudiantes/">
+                <div align="center">
+                    <input type="hidden" name="carrera" value="ind">
+                    <label>
+                        <input type="submit" value="Seleccionar">
+                    </label>
+                </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        <div class="card" style="width: ;">
+        <div class="card-body">
+        <div class="sub-row pb-4">   
+        </div>
+        </article>
+            <div style="background-color:  #f0b27a">
+                <article> <!--gastronomia-->
+                    <strong>
+                        <h1 align="center" class="titulo">
+                        Gastronomía
+                        </h1>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                     </strong>
+            </div>
+            <br>
+            <!--imagen gastronomia-->
+            <img src="{%static 'base_aspirantes/images/IMG_2158.JPG'%}" style="width:60%" >
+             <br>
+            <p class="card-text">
+                <h3 align="center">
+                ¿Qué hace un Licenciado en Gastronomía?
+                </h3>
+                <br>
+                <!--<h3 align="center"> -->
+                <h4 align="left">
+                    - Generar e innovar productos gastronomicos.
+                    <br><br>
+                    - Administrar y operar servicios de alimentos y bebidas en diversos escenarios.
+                    <br><br>
+                    - Tener una excelente presentación y actitud de servicio.
+                </h4>
+            </p>
+            <br>
+                <h2 align="center">
+                Áreas Laborales
+                </h2>
+                <br>
+                    <h4 align="left">
+                        - Empresas de organizaciones de eventos de banquetes.
+                        <br><br>
+                        - Cocina al aire (líneas aéreas).
+                        <br><br>
+                        - Consultor para el desarrollo de empresas gastronómicas.
+                        <br><br>
+                        - Colocar un negocio propio.
+                    </h4>
+                    <br>
+                    <form align="center" method="get" action="estudiantes/">
+                <div align="center">
+                    <input type="hidden" name="carrera" value="gast">
+                    <label>
+                        <input type="submit" value="Seleccionar">
+                    </label>
+                </div>
+                </form>
+                </div>
+            </div>
+        </article>
+        </div>
+        </div>
+    </div>
+</body>
+<br>
+{%include 'footer.html'%}
+</html>

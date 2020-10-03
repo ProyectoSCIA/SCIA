@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/datos_estudiante.css'%}" type="text/css" media="all" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/bootstrap.css'%}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'base_aspirantes/css/bootstrap.min.css'%}" type="text/css" media="all" />
+    <script type="text/javascript" href="{% static 'base_aspirantes/js/boostrap.js'%}"></script>
+    <script type="text/javascript" href="{% static 'base_aspirantes/js/boostrap.min.js'%}"></script>
+
+	<title>Datos básicos de aspirante</title>
+</head>
+<body align="center">
+{%include 'encabezado.html'%}
+
+ <div class="container" style="width: 70%;">
+        <div id="loginbox" style="margin-top:50px;">
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title" align="center"><h1>Instrucciones para realizar el examen diagnóstico</h1>
+                        <h4>Contará con un total de 4 horas para realizar el examen por lo que debe tomar en cuenta las siguientes consideraciones:</h4></div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px;">
+                    </div>
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" class="alert alert-danger col-sm-12"></div>
+
+                        <form id="loginform" class="form-horizontal" role="form">
+
+                <section align="left">
+
+		        <div class="offering-title">
+		            <h2 align="center">Área de Matemáticas </h2>
+
+		            <p>1.- Contará con un total de 60 min en esta área (recomendado).</p>
+		            <p>2.- Podrá utilizar una hoja blanca y un lápiz con goma para realizar los cálculos.</p>
+		            <p>3.- Las figuras que acompañan esta prueba proveen información útil para resolver los problemas, son planas a menos que se indique lo contrario y todos los números que se usan son números reales.</p>
+		            <p>4.- Leer con atención cada pregunta.</p>
+		            <p>5.- Seleccione el inciso que crea correcto.</p>
+		            <p>6.- Podrá cambiar de opción antes de guardar el examen.</p>
+		            <p>7.- No deberá existir alguna pregunta sin respuesta.</p>
+
+		        </div>
+		        </section>
+
+
+		        <section align="left">
+		        <div class="offering-title">
+		            <h2 align="center">Razonamiento Verbal</h2>
+
+		            <p>1.- Contará con un total de 20 min en esta área(recomendado).</p>
+		            <p>2.- Leer con atención e indica la respuesta correcta en el espacio adecuado.</p>
+		            <p>3.- Leer atentamente cada cuestión.</p>
+		            <p>4.- No deberá existir alguna pregunta sin respuesta.</p>
+		        </div>
+		        </section>
+		        <section align="left">
+		        <div class="offering-title">
+		            <h2 align="center">Razonamiento Lógico-Matemático</h2>
+		            <p>1.- Contará con un tiempo estimado de 40 min para contestar esta sección (recomendado).</p>
+		            <p>2.-Podrá hacer uso de un lápiz con goma y una hoja en blanco para esta sección.</p>
+		            <p>3.- Las figuras que acompañan esta prueba proveen información útil para resolver los problemas, son planas a menos que se indique lo contrario y todos los números que se usan son números reales.</p>
+		            <p>4.- Leer con atención cada pregunta.</p>
+		            <p>5.- Seleccione el inciso que crea correcto.</p>
+		            <p>6.- Podrá cambiar de opción antes de guardar el examen.</p>
+		            <p>7.- No deberá existir alguna pregunta sin respuesta.</p>
+		        </div>
+		        </section>
+
+		        <section align="left">
+		        <div class="offering-title">
+		            <h2 align="center">Física</h2>
+		            <p>1.- Contará con un tiempo estimado de 40 min para contestar esta sección (recomendado).</p>
+		            <p>2.- Podrá hacer uso de un lápiz con goma y una hoja en blanco para esta sección.</p>
+		            <p>3.- Las figuras que acompañan esta prueba proveen información útil para resolver los problemas, son planas a menos que se indique lo contrario y todos los números que se usan son números reales.</p>
+		            <p>4.- Leer con atención cada pregunta.</p>
+		            <p>5.- Seleccione el inciso que crea correcto.</p>
+		            <p>6.- Podrá cambiar de opción antes de guardar el examen.</p>
+		            <p>7.- No deberá existir alguna pregunta sin respuesta.</p>
+		        </div>
+		        </section>
+
+		        <section align="left">
+		        <div class="offering-title">
+		            <h2 align="center">Química</h2>
+		            <p>1.- Contará con un total de 20 min en esta área (recomendado).</p>
+		            <p>2.- Leer con atención cada cuestión y responde.</p>
+		            <p>3.- Podrá cambiar de opción antes de guardar el examen .</p>
+		            <p>4.- No deberá existir alguna pregunta sin respuesta.</p>
+		        </div>
+		        </section>
+
+
+                <div style="margin-bottom: 25px" align="center">
+                <div class="col-sm-12 controls">
+                <a id="btn-login" href="#" class="btn btn-success">Iniciar examen </a>
+                </div>
+                <br>
+                </div>
+                </div>
+                </form>
+                </div>
+                </div>
+        </div>
+    {%include 'footer.html'%}
+</body>
+<br>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base_aspirantes/css/preguntas.css' %}">
+</head>
+<body style="padding: 20px">
+  <header>
+      {% include 'encabezado.html'%}
+  </header>
+<div class="tabContainer">
+    <div class="buttonContainer">
+     <button id="inge" onclick="showPanel(0,'#7dcea0')" > <p>Tiempo restante: 
+     <label id = "tiempoi">60:00</label></p></button>
+     
+    
+   
+    </div>
+    <!--todo bien-->
+
+<form name="formulario" method="POST" enctype="multipart/form-data">
+  
+   <!--Matematicas --> 
+    <div class="tabPanel"> 
+         <h3> <b> Preguntas de Matematicas </b></h3> 
+         <br>
+     {% for carrer_ingm in carrer_ingm %} 
+     {% if carrer_ingm.grupo_clave.clave_grupo == 'MAT' %}
+          <p style="background-color: #CBF8F8 "> <b> {{carrer_ingm.pregunta}} </b></p>
+      <br>
+   <form action="" method="post" target="_blank">
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="a"> .- &#160 {{ carrer_ingm.respuesta_examen_a}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="b"> .- &#160 {{ carrer_ingm.respuesta_examen_b}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="c"> .- &#160 {{ carrer_ingm.respuesta_examen_c}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="d"> .- &#160 {{ carrer_ingm.respuesta_examen_d}} <br> 
+   &emsp; &#160 &#160 <input type="radio" name="gender" value="e"> .- &#160 {{ carrer_ingm.respuesta_examen_e}} <br> 
+      </form>
+
+
+      <br>
+      <br>
+    {% endif %}
+    {% endfor %}
+    </div>
+    </form>
+<!--todo correcto-->
+
+       <br>
+       <center><button onclick="location.href='http://127.0.0.1:8000/ingenieria_ingfis/'" >Siguiente</button></center>
+       <br>
+        <script src="{% static 'base_aspirantes/js/tiempo.js' %}"> </script>
+        <script src="{% static 'base_aspirantes/js/inge.js' %}"> </script>
+        <!--<script src="{% static 'base_aspirantes/js/b.js' %}"> </script>-->
+<script src="{% static 'base_aspirantes/js/preguntas.js' %}"></script>
+</body>
+{% include 'footer.html'%}
+</html>

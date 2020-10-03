@@ -1,0 +1,57 @@
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+body{
+  
+  font-family: "Roboto", sans-serif;
+  background: #FFFFFF;
+  margin: auto;
+  padding: auto;
+
+}
+
+a:hover{
+    text-decoration:none;
+}
+.section-padding {
+    padding: auto ;
+    width: auto;
+    margin: auto;
+    
+}
+
+.bottom {
+    background-color: #DC971A;
+}
+.bottom .copyright {
+    color: #DC971A;
+    font-weight: 600;
+
+}
+.copyright a {
+    color: #DC971A;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #DC971A;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+    color: #DC971A;
+}
+

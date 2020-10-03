@@ -1,0 +1,15 @@
+body {
+  min-height: 100vh;
+  background: url("tepeaca.jpeg")center / cover;
+  background-blend-mode: screen;
+}
+h1 {
+	font-size: 60px;
+	font-family: "Roboto", sans-serif;
+	color:white;
+}
+p{
+	font-size: 40px;
+	font-family: "Roboto", sans-serif;
+	color: white;
+}

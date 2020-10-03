@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de Carreras</title>
+</head>
+<body>
+    {% include 'encabezado.html'%}
+	<h1> Lista de Carreras del ITST </h1> 
+	<br>
+	<br>
+    <table width="100%"  border="1" cellpadding="0" cellspacing="0"> 
+        <td> <h3> <b>Clave</b> </h3></td>    <td> <h3> <b>Carrera </b></h3></td> 
+    {% for carreras in carreras %}
+     
+      <tr>
+        
+            <td>  <center> {{ carreras.clave_carrera}} </center></td> 
+            
+            <td> <center> <p>{{ carreras.nombre_carrera}}</p> </center> </td> </tr>
+      
+    {% endfor %}
+</table>
+<br>
+<br>
+<br>
+{% include 'footer.html'%}
+</body>
+</html>
