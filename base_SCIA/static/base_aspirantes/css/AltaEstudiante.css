@@ -1,0 +1,43 @@
+
+body  {
+  background-color: silver;
+}
+
+h1 {
+  color: navy;
+  margin-left: 50px;
+  font-style: italic; color: black
+}
+label {
+	color: navy;
+  margin-all: 10px;
+  font-style: inherit; color: black 
+
+}
+fieldset {
+	background: rgb(72, 202, 231);
+	margin-bottom: 30px
+
+}
+input {
+	background: rgb(93, 166, 216);
+	border: 1px solid rgb(59, 131, 216)
+	border-style: hidden;
+}
+div {
+	text-align: right;
+	 height: 170px;
+	 width: 80%;
+}
+
+/*form input, form textarea{
+display: block;    
+}*/
+form {
+	padding: 20px 0 20px 0;
+	cursor: pointer;
+	display: black;
+	width: 500px;
+	margin: 0 auto;
+	text-align: left;
+}

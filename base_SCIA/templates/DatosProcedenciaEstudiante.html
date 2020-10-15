@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head tyle="background-color: #E1EEE9;">
+		<title>Datos Personales de Estudiantes</title>
+	<link rel="stylesheet" type="text/css" href="Estilodeproductos.css">
+	<script src = "validacion9.js" ></script>
+	{%load static%}
+	{%include 'encabezado2.html'%}
+</head>
+<body style="background-color: #FFFFD1;">
+	
+
+		<meta charset="utf-8">
+	
+		<link rel="stylesheet" href="{% static 'base_aspirantes/css/lateral.css' %}" type="text/css" media="all" />
+
+</head>
+<body > 
+<nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30" height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+    </svg>
+  </a>
+</nav>
+ 
+<div id="main">
+<!-- Add all your websites page content here  -->
+
+
+<div id="sideNavigation" class="sidenav">
+&emsp; &emsp;  &emsp;  &emsp; <img src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="logo"  align="center" width="100px" height="110px" >
+
+<br>
+<ul class="acor">
+  <li ><a href="#"><h5><img src="{%static 'base_aspirantes/images/encabezado/activo.png'%}" alt="activo" align="left" width="8px" height="9px">&emsp;&emsp;Administrador&emsp;<img src="{%static 'base_aspirantes/images/encabezado/flecha.png'%}" alt="activo" align="right" width="18px" height="18px"> </h5> </a>
+
+    <ul>
+      <li><a href="#">Cambiar contraseña</a></li>
+      <li><a href="#">Cerrar sesión</a></li>
+    </ul>
+  </li>
+</ul>
+
+<br>
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+<br>
+<br>
+<br>
+
+<ul class="acorh">
+  <li><a href="#">Estudiantes</a>
+    <ul>
+      <li><a href="#">Dar de Alta Estudiante</a></li>
+    <li><a href="#">Datos Personales</a></li>
+    <li><a href="#">Datos Academicos</a></li>
+    <li><a href="#">Datos Procedencia</a></li>
+    </ul>
+  </li>
+
+  <li><a href="#">Docentes</a>
+    <ul>
+      <li><a href="#">Dar de Alta Docentes</a></li>
+    <li><a href="#">Datos Personales</a></li>
+    <li><a href="#">Datos Academicos</a></li>
+    </ul>
+  </li>
+
+  <li><a href="#">Publicar Avisos</a></li>
+  <li><a href="#">Gráficos</a></li>
+  <li><a href="#">Configuraciones</a></li>
+</ul>
+
+<br>
+<br>
+<br>
+</div>
+</div>
+
+
+<script>
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+ 
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+
+
+<br>
+<br>
+	<div align="center">
+		<div class="ajustarT" align="center" style="background-color: white; width: 600px">
+			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+				<div lass="imgcontainer" align="center">
+		<form method="get" enctype="text/plain" autocomplete="false">
+			<br>
+			<input type="image" name="foto" src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="foto" align="center">
+			<br>
+			<input type="file" name="archivo" align="center">
+			<br>
+			<br>
+
+		<center><h1+><b><i> Datos de Procedencia de Estudiantes</i></b></h1></center>
+		<br>
+		<br>
+				<label >
+				Matricula:
+
+			<input type="number" name="matricula" id="matricula"
+			required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6">
+		*</label>
+		<br>
+		<label>
+			<br>
+			Nivel Básico:
+
+			<input type="text" name="nivel" required="true"
+			id="nivel" placeholder="Escribe el Nivel Básico">
+		*</label>
+				<br>
+		<label>
+			<br>
+			Año Egreso:
+
+			<input type="number" name="añoe" required="true"
+			id="codigo" placeholder="Escribe el Año de Egreso">
+		*</label>
+				<br>
+		<label>
+			<br>
+			Promedio:
+
+			<input type="number" name="promedio" required="true"
+			id="promedio" placeholder="Escribe el Promedio" step="any">
+		*</label>
+				<br>
+		</div>
+		<br>
+	<center><input type="submit" name="Guardar" value="Actualizar Datos" style="background-color: #B5771E; color: white; border:1px  "></center>
+	<br>
+	<input type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
+	<br>
+	<br>
+	</form>
+   			</form>
+   		</div>
+	</div>
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>
+
+
+
+
+

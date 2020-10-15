@@ -29,3 +29,42 @@ def home (request):
 
 def login (request):
 	return render(request,'login.html')
+
+def encabezado2 (request):
+	return render(request,'encabezado2.html')
+
+def encabezadoE (request):
+	return render(request,'encabezadoE.html')
+
+def AltaEstudiante (request):
+	return render(request,'AltaEstudiante.html')
+
+def ListaDetalleEstudiante (request):
+	return render(request,'ListaDetalleEstudiante.html')
+
+def DatosPersonalesEstudiante (request):
+	return render(request,'DatosPersonalesEstudiante.html')
+
+def DatosAcademicosEstudiante (request):
+	return render(request,'DatosAcademicosEstudiante.html')
+
+def DatosProcedenciaEstudiante (request):
+	return render(request,'DatosProcedenciaEstudiante.html')
+
+def AltaDocente (request):
+	return render(request,'AltaDocente.html')
+
+def ListaDetalleDocente (request):
+	return render(request,'ListaDetalleDocente.html')
+
+def DatosPersonalesDocente (request):
+	return render(request,'DatosPersonalesDocente.html')
+
+def DatosAcademicosDocente (request):
+	return render(request,'DatosAcademicosDocente.html')
+
+def PublicarAvisos (request):
+	return render(request,'PublicarAvisos.html')
+
+def lateral (request):
+	return render(request,'lateral.html')
