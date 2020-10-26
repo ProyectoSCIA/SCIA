@@ -22,4 +22,5 @@ url(r'^DatosPersonalesDocente/$', views.DatosPersonalesDocente),
 url(r'^DatosAcademicosDocente/$', views.DatosAcademicosDocente),
 url(r'^PublicarAvisos/$', views.PublicarAvisos),
 url(r'^lateral/$', views.lateral),
+url(r'^formulario/$', views.formulario),
 ]

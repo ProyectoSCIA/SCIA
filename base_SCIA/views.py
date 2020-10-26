@@ -68,3 +68,7 @@ def PublicarAvisos (request):
 
 def lateral (request):
 	return render(request,'lateral.html')
+
+def formulario (request):
+	return render(request,'formulario.html')
+
