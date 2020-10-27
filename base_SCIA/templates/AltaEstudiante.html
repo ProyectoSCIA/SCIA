@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
+	<meta charset="utf-8">
 		<title>Alta de Estudiantes</title>
 
-	<script src = "validacion9.js" ></script>
 	{%load static%}
 	{%include 'encabezado2.html'%}
 	{%include 'lateral.html'%}
@@ -14,22 +14,39 @@
 <body style="background-color: #FFFFD1; font-family: Roboto;">
 <br>
 		<center><h2><b><i> ALTA DE ESTUDIANTES </i></b></h2></center>
+{% for datos_personales in datos_personales %}
+	{{Alta.Id_Personales}}
+	{{Alta.Id_Nombre}}
+	{{Alta.Apellido_Paterno}}
+	{{Alta.Apellido_Materno}}
+	{{Alta.Edad}}
+	{{Alta.Genero}}
+	{{Alta.Telefono}}
+	{{Alta.Direccion}}
+	{{Alta.Codigo_Postal}}
+	{{Alta.CURP}}
+	{{Alta.Fecha_Nacimiento}}
+	{{Alta.Lugar_Nacimiento}}
+	{{Alta.Correo_Electronico}}
+	{{Alta.Grupo_Sanguineo}}
+
+{% endfor %}
 
 <br>
 	<div align="center">
 		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
-			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form method="get" enctype="text/plain" autocomplete="false">
+		<form  enctype="text/plain" autocomplete="false">
 		<br>
-		<legend align="center"><h2><b><i> Datos Personales </i></b></h2> </legend>
+		<legend align="center"><h2><b><i> Datos Personales Estudiante </i></b></h2> </legend>
 		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 750px; border-image: initial; border: 0px solid white">
 
 		<legend style=" width: 300px; height: 1px;" align="left">
 			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 			<input type="image" name="foto" src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="foto" align="center">
 			<br>
-			<br
+			<br>
 			<input type="file" name="archivo" align="center">
 		</legend>
 		<br>
@@ -50,13 +67,13 @@
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="number" name="matricula" id="matricula" required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6" style="width:70px;height:15px" placeholder="Matricula"> *
+				<input type="number" name="Id_Personales" id="Id_Personales" required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6" style="width:70px;height:15px" placeholder="Matricula"> *
 				&emsp;&emsp;&emsp;
-				<input type="t" name="nombre" id="nombre" required="true" placeholder="Escribe el Nombre" maxlength="30"> *
+				<input type="t" name="Nombre" id="Nombre" required="true" placeholder="Escribe el Nombre" maxlength="30"> *
 				&emsp;&emsp;&emsp;
-				<input type="text" name="ap" id="ap" required="true" placeholder="Escribe el primer Apellido" maxlength="20"> *
+				<input type="text" name="Apellido_Paterno" id="Apellido_Paterno" required="true" placeholder="Escribe el primer Apellido" maxlength="20"> *
 				&emsp;&emsp;&emsp;
-				<input type="text" name="am" id="am" required="true" placeholder="Escribe el segundo Apellido" maxlength="20">*
+				<input type="text" name="Apellido_Materno" id="Apellido_Materno" required="true" placeholder="Escribe el segundo Apellido" maxlength="20">*
 				
 			</label>
 			<br>
@@ -79,15 +96,15 @@
 				<br>
 				&emsp;&emsp;&emsp;
 				
-				<input type="number" name="edad" id="edad" required="true" placeholder="Edad" maxlength="2" style="width:70px;height:15px" > *
+				<input type="number" name="Edad" id="Edad" required="true" placeholder="Edad" maxlength="2" style="width:70px;height:15px" > *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="radio" name="hm" required="true" id="h" placeholder="Escribe el genero" value="h"> Hombre *
+				<input type="radio" name="Genero" required="true" id="Genero" placeholder="Escribe el genero" value="Hombre"> Hombre *
 				&emsp;
-				<input type="radio" name="hm" required="true" id="m" placeholder="Escribe el genero" value="m"> Mujer *
+				<input type="radio" name="Genero" required="true" id="Generos" placeholder="Escribe el genero" value="Mujer"> Mujer *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="tel" name="telefono" required="true" id="telefono" placeholder="Escribe el Teléfono"> *
+				<input type="tel" name="Telefono" required="true" id="Telefono" placeholder="Escribe el Teléfono"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="direccion" required="true" id="direccion" placeholder="Escribe la Dirección"> *
+				<input type="text" name="Direccion" required="true" id="Direccion" placeholder="Escribe la Dirección"> *
 			</label>
 			<br>
 			<br>
@@ -109,13 +126,13 @@
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;
-				<input type="number" name="codigo" required="true" id="codigo" placeholder="C.P." style="width:70px;height:15px"> *
+				<input type="number" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." style="width:70px;height:15px"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="curp" required="true" id="curp" placeholder="Escribe el CURP"> *
+				<input type="text" name="CURP" required="true" id="CURP" placeholder="Escribe el CURP"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="date" name="fecha" required="true" id="fecha" style="width:180px;height:15px"> *
+				<input type="date" name="Fecha_Nacimiento" required="true" id="Fecha_Nacimiento" style="width:180px;height:15px"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="lugar"  required="true" id="lugar" placeholder="Escribe el Lugar de Nacimiento" style="width:190px;height:15px"> *
+				<input type="text" name="Lugar_Nacimiento"  required="true" id="Lugar_Nacimiento" placeholder="Escribe el Lugar de Nacimiento" style="width:190px;height:15px"> *
 			</label>
 			<br>
 			<br>
@@ -137,9 +154,9 @@
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;
-				<input type="email" name="correo"required="true" id="correo" placeholder="Escribe el Correo Electrónico" style="width:180px;height:15px"> *
+				<input type="email" name="Correo_Electronico"required="true" id="Correo_Electronico" placeholder="Escribe el Correo Electrónico" style="width:180px;height:15px"> *
 				&emsp;
-				<input type="text" name="grupos" required="true" id="rgrupos" placeholder="Escribe el Grupo Sanguíneo"> *
+				<input type="text" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" placeholder="Escribe el Grupo Sanguíneo"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				<input type="text" name="tutor" required="true" id="tutor" placeholder="Escribe el Nombre"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -177,7 +194,7 @@
 		<br>
 <label>
 	<br>
-	<input class="button " type="submit" name="Guardar" value="Dar de Alta Estudiante" style="background-color: #B5771E; color: white; border:1px  ">
+	<input class="button " type="submit" name="Guardar" value="Dar de Alta Estudiante" style="background-color: #B5771E; color: white; border:1px  " >
 	&emsp;&emsp;
 	<input class="button cajast" type="submit" name="Guardar" value="Ver Lista de Estudiantes" style="background-color: #B5771E; color: white; border:1px ">
 	&emsp;&emsp;

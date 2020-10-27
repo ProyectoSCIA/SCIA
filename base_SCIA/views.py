@@ -37,10 +37,19 @@ def encabezadoE (request):
 	return render(request,'encabezadoE.html')
 
 def AltaEstudiante (request):
-	return render(request,'AltaEstudiante.html')
+	if 'datos_personales' in request.POST and request.POST['datos_personales']:
+		datos_personales= request.POST['datos_personales']
+		obj1 = Datos_Personales.objects.filter(Id_Personales = datos_personales)
+
+	return render(request,'AltaEstudiante.html'
+		)
 
 def ListaDetalleEstudiante (request):
-	return render(request,'ListaDetalleEstudiante.html')
+	lista = Datos_Personales.objects.filter()
+	return render(request,'ListaDetalleEstudiante.html',{
+		'lista':lista,
+		},
+		)
 
 def DatosPersonalesEstudiante (request):
 	return render(request,'DatosPersonalesEstudiante.html')

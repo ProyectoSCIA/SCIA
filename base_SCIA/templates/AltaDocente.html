@@ -1,122 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
+	<meta charset="utf-8">
 		<title>Alta de Estudiantes</title>
-	<link rel="stylesheet" type="text/css" href="Estilodeproductos.css">
-	<script src = "validacion9.js" ></script>
+
 	{%load static%}
 	{%include 'encabezado2.html'%}
-	
+	{%include 'lateral.html'%}
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.csstype="text/css" media="all" />
 </head>
-<body style="background-color: #FFFFD1;">
+<body style="background-color: #FFFFD1; font-family: Roboto;">
 	
-
-<br>
 <br>
 	<div align="center">
-		<div class="ajustarT" align="center" style="background-color: white; width: 600px">
-			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
+			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form method="get" enctype="text/plain" autocomplete="false">
-			<br>
+		<form  enctype="text/plain" autocomplete="false">
+		<br>
+		<legend align="center"><h2><b><i> Datos Personales Docente </i></b></h2> </legend>
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 500px; border-image: initial; border: 0px solid white">
+
+		<legend style=" width: 300px; height: 1px;" align="left">
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 			<input type="image" name="foto" src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="foto" align="center">
 			<br>
+			<br>
 			<input type="file" name="archivo" align="center">
-			<br>
-			<br>
-
-		<center><h1+><b><i> Captura de datos de Docente</i></b></h1></center>
-
+		</legend>
 		<br>
-		<label >
+
+			<legend align="left">
+			<label >
 			<br>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Nombre Completo:
-
-			<input type="text" name="nombre" id="nombre" required="true" placeholder="Escribe el Nombre " maxlength="30">
-		*</label>
-		<br>
-		<label >
+				&emsp;&emsp;&emsp;&emsp;&emsp;
+				Edad:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Genero:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Teléfono:
+			</label>
+			<label >
+				<br>
+				<br>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="Nombre" id="Nombre" required="true" placeholder="Escribe el Nombre Completo" maxlength="30" style="width:170px;height:15px"> *
+				&emsp;&emsp;
+				<input type="number" name="Edad" id="Edad" required="true" placeholder="Edad" maxlength="2" style="width:70px;height:15px" >*
+				&emsp;&emsp;&emsp;
+				<input type="radio" name="Genero" required="true" id="Genero" placeholder="Escribe el genero" value="Hombre"> Hombre *
+				&emsp;
+				<input type="radio" name="Genero" required="true" id="Generos" placeholder="Escribe el genero" value="Mujer"> Mujer *
+				&emsp;&emsp;&emsp;
+				<input type="tel" name="Telefono" required="true" id="Telefono" placeholder="Escribe el Teléfono"> *
+			</label>
 			<br>
+			<br>
+			<br>
+			<label>
+				<br>
+				<br>
+				<br>
+				&emsp;&emsp;&emsp;
+				Dirección:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Código Postal:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Correo Electrónico:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Sanguíneo:
+			</label>
+			<label >
+				<br>
+				<br>
+				&emsp;&emsp;&emsp;
+				<input type="text" name="Direccion" required="true" id="Direccion" placeholder="Escribe la Dirección"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="number" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." style="width:70px;height:15px"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="email" name="Correo_Electronico"required="true" id="Correo_Electronico" placeholder="Escribe el Correo Electrónico" style="width:180px;height:15px"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" placeholder="Escribe el Grupo Sanguíneo" style="width:170px;height:15px"> *
+			</label>
+			<br>
+			<br>
+			<br>
+			<br>
+			<hr>
+			</legend>
+			<br>
+			<legend align="center"><h2><b><i> Datos Escolares </i></b></h2> </legend>
+				<legend align="center">
+			<label>
+				<br>
+				<br>
+				&emsp;&emsp;&emsp;
+				Cedula Profesional:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Cargo:
-
-			<input type="text" name="cargo" id="cargo" required="true" placeholder="Escribe el Cargo" maxlength="30">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Edad:
-
-			<input type="number" name="edad"
-			id="edad" required="true" placeholder="Escribe la Edad" maxlength="2">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Genero:
-
-			<input type="radio" name="hm" required="true" 
-			id="h" placeholder="Escribe el genero" value="h"> Hombre
-			<input type="radio" name="hm" required="true" 
-			id="m" placeholder="Escribe el genero" value="m"> Mujer
-		*</label>
-		<br>
-		<label>
-			<br>
-			Teléfono:
-
-			<input type="tel" name="telefono" required="true"
-			id="telefono" placeholder="Escribe el Teléfono">
-		*</label>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Disciplinas Asignadas:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Grupo Tutorado:
+			</label>
+			<label >
 				<br>
-		<label>
-			<br>
-			Dirección:
-
-			<input type="text" name="direccion" required="true"
-			id="direccion" placeholder="Escribe la Dirección">
-		*</label>
 				<br>
-		<label>
-			<br>
-			Código Postal:
+				&emsp;&emsp;&emsp;
+				<input type="text" name="Cedula" required="true" id="Cedula" placeholder="Escribe la Cedula Profesional" style="width:175px;height:15px"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="Cargo" id="Cargo" required="true" placeholder="Escribe el Cargo" maxlength="20"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="Disciplinas_Asignadas" id="Disciplinas_Asignadas" required="true" placeholder="Disciplinas Asignadas" maxlength="50"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="Tutorado" id="Tutorado" required="true" placeholder="Grupo Tutorado" maxlength="20"  style="width:120px;height:15px"> *
+				
+				</label>
 
-			<input type="number" name="codigo" required="true"
-			id="codigo" placeholder="Escribe el Código Postal">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Correo Electrónico:
-
-			<input type="email" name="correo"required="true"
-			id="correo" placeholder="Escribe el Correo Electrónico">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Grupo Sanguíneo:
-
-			<input type="text" name="grupos" required="true"
-			id="rgrupos" placeholder="Escribe el Grupo Sanguíneo">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Cedula Profesional:
-
-			<input type="text" name="tutor" required="true"
-			id="tutor" placeholder="Escribe el Nombre">
-		*</label>
-			<br>
-
+			
+	</legend>
+		</fieldset>
 		</div>
 		<br>
-
-	<center><input type="submit" name="Guardar" value="Dar de Alta Docente" style="background-color: #B5771E; color: white; border:1px  "></center>
+<label>
 	<br>
-	<center><input type="submit" name="Guardar" value="Ver Lista de Docentes" style="background-color: #B5771E; color: white; border:1px "></center>
-	<br>
-	<input type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
+	<input class="button " type="submit" name="Guardar" value="Dar de Alta Estudiante" style="background-color: #B5771E; color: white; border:1px  " >
+	&emsp;&emsp;
+	<input class="button cajast" type="submit" name="Guardar" value="Ver Lista de Estudiantes" style="background-color: #B5771E; color: white; border:1px ">
+	&emsp;&emsp;
+	<input class="button cajast" type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
+	</label>
 	<br>
 	<br>
 	</form>

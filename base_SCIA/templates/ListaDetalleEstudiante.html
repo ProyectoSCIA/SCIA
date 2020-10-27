@@ -1,196 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
+		<meta charset="utf-8">
 		<title>Detalles de Estudiantes</title>
-	<link rel="stylesheet" type="text/css" href="Estilodeproductos.css">
-	<script src = "validacion9.js" ></script>
+	
 	{%load static%}
 	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+
 </head>
-<body style="background-color: #FFFFD1;">
+<body style="background-color: #FFFFD1; font-family: Roboto;">
 	
 <br>
 <br>
 	<div align="center">
-		<div class="ajustarT" align="center" style="background-color: white; width: 600px">
-			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
+			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form method="get" enctype="text/plain" autocomplete="false">
-			<br>
-
-			<br>
-			<br>
-
-		<center><h1+><b><i> Lista de Estudiantes </i></b></h1></center>
+		<form  enctype="text/plain" autocomplete="false">
 		<br>
-		<label >
-			<br>
-				No.
+		<legend align="center"><h2><b><i>Lista de Estudiante </i></b></h2> </legend>
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height:200px; border-image: initial; border: 0px solid white">
 
-			<input type="number" name="numero" id="numero"
-			required="true" autofocus="true" >
-		*</label>
+		<legend style=" width: 300px; height: 1px;" align="left">
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+			
+		</legend>
 		<br>
-		<label >
-			<br>
-				Matricula:
-
-			<input type="number" name="matricula" id="matricula"
-			required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6">
-		*</label>
 		<br>
-		<label >
-			<br>
-				Nombre:
-
-			<input type="t" name="nombre" id="nombre" required="true" placeholder="Escribe el Nombre" maxlength="30">
-		*</label>
 		<br>
-		<label>
-			<br>
-			Apellido Paterno:
+			<legend align="left">
+				<table width="100%"  border="1" cellpadding="0" cellspacing="0"> 
+			<td> <b>No.</b> </td>
+			<td> <b> Matricula</b></td>
+			<td> <b> Nombre</b></td>
+			<td> <b> Apellido Paterno</b></td>
+			<td> <b> Apellido Materno</b> </td>
+			<td>  <b> Edad</b> </td>
+			<td> <b> Genero</b> </td>
+			<td> <b> Teléfono</b> </td>
+			<td> <b> Dirección</b></td>
+			<td> <b> Código Postal</b> </h3></td>
+			<td> <b> CURP</b> </td>
+			<td> <b> Fecha Nacimiento</b> </h3></td>
+			<td> <b> Lugar Nacimiento</b> </td>
+			<td> <b> Correo Electrónico</b></td>
+			<td> <b> Grupo Sanguíneo</b></td>
+			<td><b> Padre o Tutor</b> </h3></td>
+			<td> <b>  del Tutor</b> </td>
+			<td> <b>  Básico</b> </td>
+			<td> <b>  Egreso</b> </td>
 
-			<input type="text" name="ap"
-			id="ap" required="true" placeholder="Escribe el primer Apellido" maxlength="20">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Apellido Materno:
+			{% for carre in carre %}
+			<tr> 
+						<td>  <center> {{carre.no_ficha}} </center></td>
+	
+					<td>  <p>{{carre.nombre_alumno}} {{carre.ape_paterno}} {{carre.ape_materno}} </p></td>
+		
+						<td> <center><input type="submit" value="Actualizar"> </center></td>
+			</tr> 
+			{% endfor %}
+		</table>
 
-			<input type="text" name="am"
-			id="am" required="true" placeholder="Escribe el segundo Apellido" maxlength="20">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Edad:
-
-			<input type="number" name="edad"
-			id="edad" required="true" placeholder="Escribe la Edad" maxlength="2">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Genero:
-
-			<input type="radio" name="hm" required="true" 
-			id="h" placeholder="Escribe el genero" value="h"> Hombre
-			<input type="radio" name="hm" required="true" 
-			id="m" placeholder="Escribe el genero" value="m"> Mujer
-		*</label>
-		<br>
-		<label>
-			<br>
-			Teléfono:
-
-			<input type="tel" name="telefono" required="true"
-			id="telefono" placeholder="Escribe el Teléfono">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Dirección.
-
-			<input type="text" name="direccion" required="true"
-			id="direccion" placeholder="Escribe la Dirección">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Código Postal:
-
-			<input type="number" name="codigo" required="true"
-			id="codigo" placeholder="Escribe el Código Postal">
-		*</label>
-				<br>
-		<label>
-			<br>
-			CURP:
-
-			<input type="text" name="curp" required="true"
-			id="curp" placeholder="Escribe el CURP">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Fecha Nacimiento:
-
-			<input type="date" name="fecha" required="true"
-			id="fecha" placeholder="Escribe la Fecha de Nacimiento">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Lugar Nacimiento:
-
-			<input type="text" name="lugar"  required="true"
-			id="lugar" placeholder="Escribe el Lugar de Nacimiento">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Correo Electrónico:
-
-			<input type="email" name="correo"required="true"
-			id="correo" placeholder="Escribe el Correo Electrónico">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Grupo Sanguíneo:
-
-			<input type="text" name="grupos" required="true"
-			id="rgrupos" placeholder="Escribe el Grupo Sanguíneo">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Padre o Tutor:
-
-			<input type="text" name="tutor" required="true"
-			id="tutor" placeholder="Escribe el Nombre">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Teléfono del Tutor:
-
-			<input type="tel" name="telefonotutor" required="true"
-			id="telefonotutor" placeholder="Escribe el Teléfono ">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Nivel Básico:
-
-			<input type="text" name="nivel" required="true"
-			id="nivel" placeholder="Escribe el Nivel Básico">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Año Egreso:
-
-			<input type="number" name="añoe" required="true"
-			id="codigo" placeholder="Escribe el Año de Egreso">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Promedio:
-
-			<input type="number" name="promedio" required="true"
-			id="codigo" placeholder="Escribe el Promedio" step="any">
-		*</label>
+			</legend>
+		</fieldset>
 		</div>
 		<br>
+
+		<a href="http://127.0.0.1:8000/DatosPersonalesEstudiante" style="background-color: #B5771E; color: white; border:1px  " class="button cajast" >Actualizar Datos Personales</a>
+		&emsp;&emsp;
+		<a href="http://127.0.0.1:8000/DatosAcademicosEstudiante" style="background-color: #B5771E; color: white; border:1px  " class="button cajast" >Actualizar Datos Academicos</a>
+		&emsp;&emsp;
+		<input class="button cajast"type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
 	<br>
 	<br>
 	</form>
    			</form>
    		</div>
 	</div>
+		
 </body>
 <br>
 <br>

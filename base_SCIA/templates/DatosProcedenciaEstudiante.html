@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
+		<meta charset="utf-8">
 		<title>Datos Personales de Estudiantes</title>
-	<link rel="stylesheet" type="text/css" href="Estilodeproductos.css">
-	<script src = "validacion9.js" ></script>
+	
 	{%load static%}
 	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+
 </head>
-<body style="background-color: #FFFFD1;">
+<body style="background-color: #FFFFD1; font-family: Roboto;">
 	
 
 <br>
 <br>
 	<div align="center">
-		<div class="ajustarT" align="center" style="background-color: white; width: 600px">
-			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
+			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form method="get" enctype="text/plain" autocomplete="false">
-			<br>
+		<form  enctype="text/plain" autocomplete="false">
+		<br>
+		<legend align="center"><h2><b><i> Datos Procedencia Estudiante </i></b></h2> </legend>
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 750px; border-image: initial; border: 0px solid white">
+
+		<legend style=" width: 300px; height: 1px;" align="left">
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 			<input type="image" name="foto" src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="foto" align="center">
 			<br>
+			<br>
 			<input type="file" name="archivo" align="center">
-			<br>
-			<br>
-
-		<center><h1+><b><i> Datos de Procedencia de Estudiantes</i></b></h1></center>
+		</legend>
 		<br>
-		<br>
-				<label >
-				Matricula:
 
-			<input type="number" name="matricula" id="matricula"
-			required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6">
-		*</label>
-		<br>
-		<label>
+			<legend align="left">
+			<label >
 			<br>
-			Nivel Básico:
-
-			<input type="text" name="nivel" required="true"
-			id="nivel" placeholder="Escribe el Nivel Básico">
-		*</label>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Nivel Básico:
+				&emsp;&emsp;&emsp;&emsp;&emsp;
+				Año Egreso:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Promedio:
+			</label>
+			<label >
 				<br>
-		<label>
-			<br>
-			Año Egreso:
-
-			<input type="number" name="añoe" required="true"
-			id="codigo" placeholder="Escribe el Año de Egreso">
-		*</label>
 				<br>
-		<label>
-			<br>
-			Promedio:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="nivel" required="true" id="nivel" placeholder="Escribe el Nivel Básico"> *
+				&emsp;&emsp;&emsp;
+						
+				<input type="number" name="añoe" required="true" id="codigo" placeholder="Escribe el Año de Egreso" > *
+				&emsp;&emsp;&emsp;
+			
+				<input type="number" name="añoe" required="true" id="codigo" placeholder="Escribe el Promedio" step="any">
 
-			<input type="number" name="promedio" required="true"
-			id="promedio" placeholder="Escribe el Promedio" step="any">
-		*</label>
-				<br>
+			</label>
+			
+			
+	</legend>
+		</fieldset>
 		</div>
 		<br>
-	<center><input type="submit" name="Guardar" value="Actualizar Datos" style="background-color: #B5771E; color: white; border:1px  "></center>
-	<br>
-	<input type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
+
+		<input class="button cajast" type="submit" name="Guardar" value="Actualizar Datos" style="background-color: #B5771E; color: white; border:1px  ">
+		&emsp;&emsp;
+		<input class="button cajast"type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
 	<br>
 	<br>
 	</form>

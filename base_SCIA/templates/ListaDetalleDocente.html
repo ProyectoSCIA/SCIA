@@ -1,125 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
+		<meta charset="utf-8">
 		<title>Detalles de Estudiantes</title>
-	<link rel="stylesheet" type="text/css" href="Estilodeproductos.css">
-	<script src = "validacion9.js" ></script>
+		
 	{%load static%}
 	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
 </head>
 <body style="background-color: #FFFFD1;">
 	
 <br>
 <br>
 	<div align="center">
-		<div class="ajustarT" align="center" style="background-color: white; width: 600px">
-			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
+			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form method="get" enctype="text/plain" autocomplete="false">
-			<br>
-
-			<br>
-			<br>
-
-		<center><h1+><b><i> Lista de Docentes </i></b></h1></center>
+		<form  enctype="text/plain" autocomplete="false">
 		<br>
-		<label >
-			<br>
-				No.
+		<legend align="center"><h2><b><i>Lista de Estudiante </i></b></h2> </legend>
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 200px; border-image: initial; border: 0px solid white">
 
-			<input type="number" name="numero" id="numero"
-			required="true" autofocus="true" >
-		*</label>
+		<legend style=" width: 300px; height: 1px;" align="left">
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+			
+		</legend>
 		<br>
-		<label>
-			<br>
-			Cedula Profesional:
-
-			<input type="text" name="tutor" required="true"
-			id="tutor" placeholder="Escribe el Nombre">
-		*</label>
 		<br>
-		<label >
-			<br>
-				Nombre Completo:
-
-			<input type="text" name="nombre" id="nombre" required="true" placeholder="Escribe el Nombre" maxlength="30">
-		*</label>
 		<br>
-		<label >
-			<br>
-				Cargo:
+			<legend align="left">
+				<table width="100%"  border="1" cellpadding="0" cellspacing="0"> 
+			<td> <b>No.</b> </td>
+			<td> <b> Cedula Profesional</b></td>
+			<td> <b> Nombre Completo</b></td>
+			<td> <b> Cargo</b> </td>
+			<td>  <b> Edad</b> </td>
+			<td> <b> Genero</b> </td>
+			<td> <b> Teléfono</b> </td>
+			<td> <b> Dirección</b></td>
+			<td> <b> Código Postal</b> </h3></td>
+			<td> <b> Correo Electrónico</b></td>
+			<td> <b> Grupo Sanguíneo</b></td>
 
-			<input type="text" name="cargo" id="cargo" required="true" placeholder="Escribe el Cargo" maxlength="30">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Edad:
+			{% for carre in carre %}
+			<tr> 
+						<td>  <center> {{carre.no_ficha}} </center></td>
+	
+					<td>  <p>{{carre.nombre_alumno}} {{carre.ape_paterno}} {{carre.ape_materno}} </p></td>
+		
+						<td> <center><input type="submit" value="Actualizar"> </center></td>
+			</tr> 
+			{% endfor %}
+		</table>
 
-			<input type="number" name="edad"
-			id="edad" required="true" placeholder="Escribe la Edad" maxlength="2">
-		*</label>
-		<br>
-		<label>
-			<br>
-			Genero:
-
-			<input type="radio" name="hm" required="true" 
-			id="h" placeholder="Escribe el genero" value="h"> Hombre
-			<input type="radio" name="hm" required="true" 
-			id="m" placeholder="Escribe el genero" value="m"> Mujer
-		*</label>
-		<br>
-		<label>
-			<br>
-			Teléfono:
-
-			<input type="tel" name="telefono" required="true"
-			id="telefono" placeholder="Escribe el Teléfono">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Dirección:
-
-			<input type="text" name="direccion" required="true"
-			id="direccion" placeholder="Escribe la Dirección">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Código Postal:
-
-			<input type="number" name="codigo" required="true"
-			id="codigo" placeholder="Escribe el Código Postal">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Correo Electrónico:
-
-			<input type="email" name="correo"required="true"
-			id="correo" placeholder="Escribe el Correo Electrónico">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Grupo Sanguíneo:
-
-			<input type="text" name="grupos" required="true"
-			id="rgrupos" placeholder="Escribe el Grupo Sanguíneo">
-		*</label>
-				<br>
-
+			</legend>
+		</fieldset>
 		</div>
 		<br>
 
-
+		<a href="http://127.0.0.1:8000/DatosPersonalesDocente" style="background-color: #B5771E; color: white; border:1px  " class="button cajast" >Actualizar Datos Personales</a>
+		&emsp;&emsp;
+		<a href="http://127.0.0.1:8000/DatosAcademicosDocente" style="background-color: #B5771E; color: white; border:1px  " class="button cajast" >Actualizar Datos Academicos</a>
+		&emsp;&emsp;
+		<input class="button cajast"type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
 	<br>
 	<br>
 	</form>
-
    			</form>
    		</div>
 	</div>

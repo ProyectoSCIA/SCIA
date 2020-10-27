@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
+		<meta charset="utf-8">
 		<title>Datos Personales de Estudiantes</title>
-	<link rel="stylesheet" type="text/css" href="Estilodeproductos.css">
-	<script src = "validacion9.js" ></script>
-	{%load static%}
-	{%include 'encabezado2.html'%}
+
+		{%load static%}
+			{%include 'encabezado2.html'%}
+			{%include 'lateral.html'%}
+
+			<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
 </head>
-<body style="background-color: #FFFFD1;">
-	
-
-<br>
-<br>
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+	<br>
 	<div align="center">
-		<div class="ajustarT" align="center" style="background-color: white; width: 600px">
-			<form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
+			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form method="get" enctype="text/plain" autocomplete="false">
+			<form  enctype="text/plain" autocomplete="false">
 			<br>
-			<input type="image" name="foto" src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="foto" align="center">
-			<br>
-			<input type="file" name="archivo" align="center">
-			<br>
+			<legend align="center"><h2><b><i> Datos Academicos Docente </i></b></h2> </legend>
+			<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 250px; border-image: initial; border: 0px solid white">
+
+			<legend style=" width: 300px; height: 1px;" align="left">
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="image" name="foto" src="{%static 'base_aspirantes/images/encabezado/imagen.png'%}" alt="foto" align="center">
+				<br>
+				<br>
+				<input type="file" name="archivo" align="center">
+			</legend>
 			<br>
 
-		<center><h1+><b><i> Datos Academicos de Estudiantes</i></b></h1></center>
-		<br>
-		<br>
+				<legend align="left">
 				<label >
-				Matricula:
-
-			<input type="number" name="matricula" id="matricula"
-			required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6">
-		*</label>
+				<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					Matricula:
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					Grado:
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					Grupo:
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					Estatus:
+				</label>
+				<label >
+					<br>&emsp;
+					<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					<input type="number" name="matricula" id="matricula"
+					required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6">*
+					&emsp;&emsp;
+					 <input type="number" name="grado" required="true"
+					id="grado" placeholder="Escribe el Grado">*
+					&emsp;&emsp;
+					<input type="text" name="grupo" required="true"
+					id="grupo" placeholder="Escribe el Grupo">*
+					&emsp;&emsp;
+					<input type="text" name="estatus"  required="true"
+					id="estatus" placeholder="Escribe el Estatus" style="width:110px;height:15px">*
+				</label>
+				<label >
+				<br>
+				<br>
+				<br>
+				<br>
+					&emsp;&emsp;&emsp;
+					Inscrito:
+				</label>
+				<label >
+					<br>
+					<br>
+					&emsp;&emsp;&emsp;
+					<input type="text" name="inscrito" required="true"
+					id="inscrito" placeholder="Escribe Aqui">*
+					
+				</label>
+				<br>
+				<br>
+				<br>
+				
+			</fieldset>
+			</div>
+			<br>
+		<label>
+			<br>
+		<input class="button cajast" type="submit" name="Guardar" value="Actualizar Datos" style="background-color: #B5771E; color: white; border:1px  ">
+		&emsp;&emsp;
+		<input class="button cajast"type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
 		<br>
 		<br>
-		<label>
-			<br>
-			Grado:
-
-			<input type="number" name="grado" required="true"
-			id="grado" placeholder="Escribe el Grado">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Grupo:
-
-			<input type="text" name="grupo" required="true"
-			id="grupo" placeholder="Escribe el Grupo">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Estatus:
-
-			<input type="text" name="estatus"  required="true"
-			id="estatus" placeholder="Escribe el Estatus">
-		*</label>
-				<br>
-		<label>
-			<br>
-			Inscrito:
-
-			<input type="text" name="inscrito" required="true"
-			id="inscrito" placeholder="Escribe Aqui">
-		*</label>
-				<br>
-		</div>
-		<br>
-
-	<center><input type="submit" name="Guardar" value="Actualizar Datos" style="background-color: #B5771E; color: white; border:1px  "></center>
-	<br>
-	<input type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
-	<br>
-	<br>
-	</form>
+		</form>
    			</form>
    		</div>
 	</div>
+
 </body>
 <br>
 <br>
