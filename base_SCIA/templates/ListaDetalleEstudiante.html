@@ -22,11 +22,11 @@
 		<form  enctype="text/plain" autocomplete="false">
 		<br>
 		<legend align="center"><h2><b><i>Lista de Estudiante </i></b></h2> </legend>
-		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height:200px; border-image: initial; border: 0px solid white">
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height:500px; border-image: initial; border: 0px solid white">
 
 		<legend style=" width: 300px; height: 1px;" align="left">
 			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-			
+
 		</legend>
 		<br>
 		<br>
@@ -53,14 +53,29 @@
 			<td> <b>  Básico</b> </td>
 			<td> <b>  Egreso</b> </td>
 
-			{% for carre in carre %}
+			{% for lista in lista %}
 			<tr> 
-						<td>  <center> {{carre.no_ficha}} </center></td>
-	
-					<td>  <p>{{carre.nombre_alumno}} {{carre.ape_paterno}} {{carre.ape_materno}} </p></td>
+					<td> {{lista.Matricula}} </td>
+					<td>  <p>{{lista.Nombre}} </p></td>
+					<td><p>{{lista.Apellido_Paterno}} </p></td>
+					<td><p>{{lista.Apellido_Materno}} </p></td> 
+					<td><p>{{lista.Edad}} </p></td> 
+					<td><p>{{lista.Genero}} </p></td>  
+					<td><p>{{lista.Telefono}} </p></td> 
+					<td><p>{{lista.Direccion}} </p></td>
+					<td><p>{{lista.Codigo_Postal}} </p></td>
+					<td><p>{{lista.CURP}} </p></td>
+					<td><p>{{lista.Fecha_Nacimiento}} </p></td>
+					<td><p>{{lista.Lugar_Nacimiento}} </p></td>
+					<td><p>{{lista.Correo_Electronico}}</p></td>
+					<td><p>{{lista.Grupo_Sanguineo}} </p></td>
+					<td><p>{{lista.Nombre_CpmpletoT}} </p></td>
+					<td><p>{{lista.TelefonoT}} </p></td>
+					<td><p>{{lista.Nivel_Basico}} </p></td>
+					<td><p>{{lista.Año_Egreso}} </p></td>
+					<td><p>{{lista.Promedio}} </p></td>
+					
 		
-						<td> <center><input type="submit" value="Actualizar"> </center></td>
-			</tr> 
 			{% endfor %}
 		</table>
 

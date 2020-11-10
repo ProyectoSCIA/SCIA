@@ -18,7 +18,7 @@ class Datos_Personales_Docente(models.Model):
 	Telefono = models.IntegerField(
 		)
 
-	Direccion = models.CharField(max_length=60, 
+	DireccionD = models.CharField(max_length=60, 
 		)
 
 	Codigo_Postal = models.IntegerField( 
@@ -32,5 +32,5 @@ class Datos_Personales_Docente(models.Model):
 
 def __str__(self):
 		return '%s %s %s %s %s %s %s %s' % (self.Nombre_Completo, self.Genero, self.Edad,
-		self.Telefono, self.Direccion, self.Codigo_Postal,
+		self.Telefono, self.DireccionD, self.Codigo_Postal,
 		self.Correo_Electronico, self.Grupo_Sanguineo)

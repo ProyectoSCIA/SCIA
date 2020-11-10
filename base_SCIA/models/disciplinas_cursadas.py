@@ -7,7 +7,7 @@ class Disciplinas_Cursadas(models.Model):
 		)
 
 	Clave_Discipina = models.ForeignKey('Disciplinas',
-		on_delete=models.CASCADE
+		on_delete=models.CASCADE,
 		)
 
 	Nombre = models.CharField(max_length=30,

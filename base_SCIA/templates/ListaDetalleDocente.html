@@ -29,29 +29,51 @@
 		</legend>
 		<br>
 		<br>
-		<br>
-			<legend align="left">
+		<br><legend align="left">
 				<table width="100%"  border="1" cellpadding="0" cellspacing="0"> 
 			<td> <b>No.</b> </td>
-			<td> <b> Cedula Profesional</b></td>
-			<td> <b> Nombre Completo</b></td>
-			<td> <b> Cargo</b> </td>
+			<td> <b> Matricula</b></td>
+			<td> <b> Nombre</b></td>
+			<td> <b> Apellido Paterno</b></td>
+			<td> <b> Apellido Materno</b> </td>
 			<td>  <b> Edad</b> </td>
 			<td> <b> Genero</b> </td>
 			<td> <b> Teléfono</b> </td>
 			<td> <b> Dirección</b></td>
 			<td> <b> Código Postal</b> </h3></td>
+			<td> <b> CURP</b> </td>
+			<td> <b> Fecha Nacimiento</b> </h3></td>
+			<td> <b> Lugar Nacimiento</b> </td>
 			<td> <b> Correo Electrónico</b></td>
 			<td> <b> Grupo Sanguíneo</b></td>
+			<td><b> Padre o Tutor</b> </h3></td>
+			<td> <b>  del Tutor</b> </td>
+			<td> <b>  Básico</b> </td>
+			<td> <b>  Egreso</b> </td>
 
-			{% for carre in carre %}
+			{% for lista in lista %}
 			<tr> 
-						<td>  <center> {{carre.no_ficha}} </center></td>
-	
-					<td>  <p>{{carre.nombre_alumno}} {{carre.ape_paterno}} {{carre.ape_materno}} </p></td>
+					<td> {{lista.Matricula}} </td>
+					<td>  <p>{{lista.Nombre}} </p></td>
+					<td><p>{{lista.Apellido_Paterno}} </p></td>
+					<td><p>{{lista.Apellido_Materno}} </p></td> 
+					<td><p>{{lista.Edad}} </p></td> 
+					<td><p>{{lista.Genero}} </p></td>  
+					<td><p>{{lista.Telefono}} </p></td> 
+					<td><p>{{lista.Direccion}} </p></td>
+					<td><p>{{lista.Codigo_Postal}} </p></td>
+					<td><p>{{lista.CURP}} </p></td>
+					<td><p>{{lista.Fecha_Nacimiento}} </p></td>
+					<td><p>{{lista.Lugar_Nacimiento}} </p></td>
+					<td><p>{{lista.Correo_Electronico}}</p></td>
+					<td><p>{{lista.Grupo_Sanguineo}} </p></td>
+					<td><p>{{lista.Nombre_CpmpletoT}} </p></td>
+					<td><p>{{lista.TelefonoT}} </p></td>
+					<td><p>{{lista.Nivel_Basico}} </p></td>
+					<td><p>{{lista.Año_Egreso}} </p></td>
+					<td><p>{{lista.Promedio}} </p></td>
+					
 		
-						<td> <center><input type="submit" value="Actualizar"> </center></td>
-			</tr> 
 			{% endfor %}
 		</table>
 

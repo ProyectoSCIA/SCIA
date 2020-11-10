@@ -6,11 +6,11 @@ class Clase(models.Model):
 		primary_key = True,
 		)
 
-	Id_Docente = models.ForeignKey('Docente',
+	Cedula_Profesional = models.ForeignKey('Docente',
 		on_delete=models.CASCADE,
 		)
 
-	Id_Estudiante = models.ForeignKey('Estudiante',
+	Matricula = models.ForeignKey('Estudiante',
 		on_delete=models.CASCADE,
 		)
 
@@ -19,4 +19,4 @@ class Clase(models.Model):
 		)
 
 	def __str__(self):
-		return '%s %s %s' % (self.Id_Docente, self.Id_Estudiante, self.Clave_Disciplina)
+		return '%s %s %s' % (self.Cedula_Profesional, self.Matricula, self.Clave_Disciplina)

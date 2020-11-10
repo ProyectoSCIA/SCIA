@@ -20,8 +20,7 @@ class Datos_Personales(models.Model):
 	Edad = models.IntegerField(
 		)
 	
-	Genero = models.CharField(
-				max_length = 2,
+	Genero = models.CharField( max_length=2,
 		)
 	
 	Telefono = models.IntegerField(
@@ -38,7 +37,8 @@ class Datos_Personales(models.Model):
 				max_length = 20,
 		)
 	
-	Fecha_Nacimiento = models.DateTimeField(
+	Fecha_Nacimiento = models.DateField(
+		max_length = 40,
 		)
 	
 	Lugar_Nacimiento = models.CharField(

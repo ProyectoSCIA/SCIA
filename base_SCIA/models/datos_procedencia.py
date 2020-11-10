@@ -1,4 +1,3 @@
-
 from django.db import models
 
 class Datos_Procedencia(models.Model):

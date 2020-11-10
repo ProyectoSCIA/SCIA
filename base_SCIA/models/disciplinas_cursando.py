@@ -23,5 +23,23 @@ class Disciplinas_Cursando(models.Model):
 		max_length = 2,
 	)
 	
+	Momento1 = models.DecimalField (
+		max_digits = 5, decimal_places = 2,
+	)
+	
+	Momento2 = models.DecimalField (
+		max_digits = 5, decimal_places = 2,
+	
+	)
+	
+	Momento3 = models.DecimalField (
+		max_digits = 5, decimal_places = 2,
+	)
+	
+	Calificacion_Final = models.DecimalField (
+		max_digits = 5, decimal_places = 2,
+	)
+	
 	def __str__(self):
-		return '%s %s %s %s' % (self.Clave_Disciplina, self.Nombre, self.Grado, self.Grupo)
+		return '%s %s %s %s %s %s %s %s' % (self.Clave_Disciplina, self.Nombre, self.Grado, 
+			self.Grupo, self.Momento1, self.Momento2, self.Momento3, self.Calificacion_Final)

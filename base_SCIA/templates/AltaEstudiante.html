@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head tyle="background-color: #E1EEE9;">
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 		<title>Alta de Estudiantes</title>
 
 	{%load static%}
@@ -9,38 +9,19 @@
 	{%include 'lateral.html'%}
 <link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
 <link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.css'%}" type="text/css" media="all" />
-
 </head>
 <body style="background-color: #FFFFD1; font-family: Roboto;">
 <br>
 		<center><h2><b><i> ALTA DE ESTUDIANTES </i></b></h2></center>
-{% for datos_personales in datos_personales %}
-	{{Alta.Id_Personales}}
-	{{Alta.Id_Nombre}}
-	{{Alta.Apellido_Paterno}}
-	{{Alta.Apellido_Materno}}
-	{{Alta.Edad}}
-	{{Alta.Genero}}
-	{{Alta.Telefono}}
-	{{Alta.Direccion}}
-	{{Alta.Codigo_Postal}}
-	{{Alta.CURP}}
-	{{Alta.Fecha_Nacimiento}}
-	{{Alta.Lugar_Nacimiento}}
-	{{Alta.Correo_Electronico}}
-	{{Alta.Grupo_Sanguineo}}
-
-{% endfor %}
 
 <br>
 	<div align="center">
 		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
-			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
+			<form method="POST" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form  enctype="text/plain" autocomplete="false">
 		<br>
 		<legend align="center"><h2><b><i> Datos Personales Estudiante </i></b></h2> </legend>
-		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 750px; border-image: initial; border: 0px solid white">
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 550px; border-image: initial; border: 0px solid white">
 
 		<legend style=" width: 300px; height: 1px;" align="left">
 			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -67,13 +48,13 @@
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="number" name="Id_Personales" id="Id_Personales" required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6" style="width:70px;height:15px" placeholder="Matricula"> *
+				<input type="number" name="Matricula" id="Matricula" required="true" pattern="[0-9] {6}" autofocus="true" maxlength="6" style="width:70px;height:15px" placeholder="Matricula" value="{{Matricula}}"> *
 				&emsp;&emsp;&emsp;
-				<input type="t" name="Nombre" id="Nombre" required="true" placeholder="Escribe el Nombre" maxlength="30"> *
+				<input type="text" name="Nombre" id="Nombre" required="true" placeholder="Escribe el Nombre" maxlength="30" value="{{Nombre}}"> *
 				&emsp;&emsp;&emsp;
-				<input type="text" name="Apellido_Paterno" id="Apellido_Paterno" required="true" placeholder="Escribe el primer Apellido" maxlength="20"> *
+				<input type="text" name="Apellido_Paterno" id="Apellido_Paterno" required="true" placeholder="Escribe el primer Apellido" maxlength="20"value="{{Apellido_Paterno}}"> *
 				&emsp;&emsp;&emsp;
-				<input type="text" name="Apellido_Materno" id="Apellido_Materno" required="true" placeholder="Escribe el segundo Apellido" maxlength="20">*
+				<input type="text" name="Apellido_Materno" id="Apellido_Materno" required="true" placeholder="Escribe el segundo Apellido" maxlength="20" value="{{Apellido_Materno}}">*
 				
 			</label>
 			<br>
@@ -84,27 +65,31 @@
 				<br>
 				&emsp;&emsp;&emsp;
 				Edad:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Genero:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Teléfono:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Dirección:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Código Postal:
 			</label>
 			<label >
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;
 				
-				<input type="number" name="Edad" id="Edad" required="true" placeholder="Edad" maxlength="2" style="width:70px;height:15px" > *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="radio" name="Genero" required="true" id="Genero" placeholder="Escribe el genero" value="Hombre"> Hombre *
+				<input type="number" name="Edad" id="Edad" required="true" placeholder="Edad" maxlength="2" style="width:45px;height:15px" value="{{Edad}}"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="radio" name="Genero" required="true" id="Genero" placeholder="Escribe el genero" value="H" value="{{Genero}}"> Hombre *
 				&emsp;
-				<input type="radio" name="Genero" required="true" id="Generos" placeholder="Escribe el genero" value="Mujer"> Mujer *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="tel" name="Telefono" required="true" id="Telefono" placeholder="Escribe el Teléfono"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="Direccion" required="true" id="Direccion" placeholder="Escribe la Dirección"> *
+				<input type="radio" name="Genero" required="true" id="Genero" placeholder="Escribe el genero" value="M"value="{{Genero}}"> Mujer *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="tel" name="Telefono" required="true" id="Telefono" placeholder="Escribe el Teléfono" style="width:115px;height:15px" value="{{Telefono}}"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="text" name="Direccion" required="true" id="Direccion" placeholder="Escribe la Dirección" value="{{Direccion}}"> *
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<input type="number" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." style="width:55px;height:15px"> *
 			</label>
 			<br>
 			<br>
@@ -113,88 +98,63 @@
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;
-				Código Postal:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				CURP:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Fecha Nacimiento:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;
 				Lugar Nacimiento:
-			</label>
-
-			<label>
-				<br>
-				<br>
-				&emsp;&emsp;&emsp;
-				<input type="number" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." style="width:70px;height:15px"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="CURP" required="true" id="CURP" placeholder="Escribe el CURP"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="date" name="Fecha_Nacimiento" required="true" id="Fecha_Nacimiento" style="width:180px;height:15px"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="Lugar_Nacimiento"  required="true" id="Lugar_Nacimiento" placeholder="Escribe el Lugar de Nacimiento" style="width:190px;height:15px"> *
-			</label>
-			<br>
-			<br>
-			<br>
-			<label>
-				<br>
-				<br>
-				&emsp;&emsp;&emsp;
 				Correo Electrónico:
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Grupo Sanguíneo:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				Padre o Tutor:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				Teléfono del Tutor:
 			</label>
 
 			<label>
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;
-				<input type="email" name="Correo_Electronico"required="true" id="Correo_Electronico" placeholder="Escribe el Correo Electrónico" style="width:180px;height:15px"> *
-				&emsp;
-				<input type="text" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" placeholder="Escribe el Grupo Sanguíneo"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="text" name="tutor" required="true" id="tutor" placeholder="Escribe el Nombre"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<input type="tel" name="telefonotutor" required="true" id="telefonotutor" placeholder="Escribe el Teléfono ">
-			*</label>
-			<br>
-			<br>
+				
+				<input type="text" name="CURP" required="true" id="CURP" placeholder="Escribe el CURP" value="{{CURP}}"> *
+				&emsp;&emsp;
+				<input type="date" name="Fecha_Nacimiento" required="true" id="Fecha_Nacimiento" style="width:125px;height:15px" value="{{Fecha_Nacimiento}}"> *
+				&emsp;&emsp;
+				<input type="text" name="Lugar_Nacimiento"  required="true" id="Lugar_Nacimiento" placeholder="Escribe el Lugar de Nacimiento" style="width:190px;height:15px" value="{{Lugar_Nacimiento}}"> *
+				&emsp;&emsp;
+				<input type="email" name="Correo_Electronico"required="true" id="Correo_Electronico" placeholder="Escribe el Correo Electrónico" style="width:180px;height:15px" value="{{Correo_Electronico}}"> *
+				&emsp;&emsp;
+				<input type="text" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" placeholder="Escribe el Grupo Sanguíneo" value="{{Grupo_Sanguineo}}"> *
+			</label>
+			</legend>
 			<br>
 			<br>
 			<hr>
-			</legend>
-			<br>
 			<legend align="center"><h2><b><i> Datos Procedencia </i></b></h2> </legend>
 				<legend align="center">
 			<label>
 				<br>
 				<br>
+
 				Nivel Básico:
 
-				<input type="text" name="nivel" required="true" id="nivel" placeholder="Escribe el Nivel Básico"> *&emsp;&emsp;&emsp;
+				<input type="text" name="nivel" required="true" id="nivel" placeholder="Escribe el Nivel Básico" value="{{Nivel_Basico}}"> *&emsp;&emsp;&emsp;
 				
 				Año Egreso:
 
-				<input type="number" name="añoe" required="true" id="codigo" placeholder="Escribe el Año de Egreso" > *&emsp;&emsp;&emsp;
+				<input type="number" name="añoe" required="true" id="codigo" placeholder="Escribe el Año Egreso" value="{{Año_Egreso}}"> *&emsp;&emsp;&emsp;
 				
 				Promedio:
 
-				<input type="number" name="añoe" required="true" id="codigo" placeholder="Escribe el Promedio" step="any">
+				<input type="number" name="añoe" required="true" id="codigo" placeholder="Escribe el Promedio" step="any" value="{{Promedio}}">
 			*</label>
 
-			
 	</legend>
+
 		</fieldset>
 		</div>
 		<br>
 <label>
 	<br>
-	<input class="button " type="submit" name="Guardar" value="Dar de Alta Estudiante" style="background-color: #B5771E; color: white; border:1px  " >
+	<input class="button " type="submit" name="guardar" value="Dar de Alta Estudiante" style="background-color: #B5771E; color: white; border:1px  " >
 	&emsp;&emsp;
 	<input class="button cajast" type="submit" name="Guardar" value="Ver Lista de Estudiantes" style="background-color: #B5771E; color: white; border:1px ">
 	&emsp;&emsp;
@@ -204,8 +164,7 @@
 	<br>
 	</form>
 
-   			</form>
-   		</div>
+		</div>
 	</div>
 
 </body>

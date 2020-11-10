@@ -2,22 +2,24 @@
 <html>
 <head tyle="background-color: #E1EEE9;">
 	<meta charset="utf-8">
-		<title>Alta de Estudiantes</title>
+		<title>Alta Docentes</title>
 
 	{%load static%}
 	{%include 'encabezado2.html'%}
 	{%include 'lateral.html'%}
 <link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
-<link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.csstype="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.css'%}" type="text/css" media="all" />
 </head>
 <body style="background-color: #FFFFD1; font-family: Roboto;">
-	
+
+		<center><h2><b><i> ALTA DE DOCENTE </i></b></h2></center>
+
 <br>
 	<div align="center">
 		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
-			<form method="post" role="form" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
+			<form method="POST" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
 				<div lass="imgcontainer" align="center">
-		<form  enctype="text/plain" autocomplete="false">
+		
 		<br>
 		<legend align="center"><h2><b><i> Datos Personales Docente </i></b></h2> </legend>
 		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 500px; border-image: initial; border: 0px solid white">
@@ -36,9 +38,9 @@
 			<br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Nombre Completo:
-				&emsp;&emsp;&emsp;&emsp;&emsp;
-				Edad:
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				Edad:
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Genero:
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Teléfono:
@@ -66,18 +68,18 @@
 				<br>
 				&emsp;&emsp;&emsp;
 				Dirección:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Código Postal:
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Correo Electrónico:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Sanguíneo:
 			</label>
 			<label >
 				<br>
 				<br>
 				&emsp;&emsp;&emsp;
-				<input type="text" name="Direccion" required="true" id="Direccion" placeholder="Escribe la Dirección"> *
+				<input type="text" name="DireccionD" required="true" id="DireccionD" placeholder="Escribe la Dirección"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				<input type="number" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." style="width:70px;height:15px"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -88,7 +90,6 @@
 			<br>
 			<br>
 			<br>
-			<br>
 			<hr>
 			</legend>
 			<br>
@@ -96,14 +97,13 @@
 				<legend align="center">
 			<label>
 				<br>
-				<br>
-				&emsp;&emsp;&emsp;
+				&emsp;&emsp;
 				Cedula Profesional:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Cargo:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Disciplinas Asignadas:
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				Grupo Tutorado:
 			</label>
 			<label >
@@ -111,9 +111,9 @@
 				<br>
 				&emsp;&emsp;&emsp;
 				<input type="text" name="Cedula" required="true" id="Cedula" placeholder="Escribe la Cedula Profesional" style="width:175px;height:15px"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;
 				<input type="text" name="Cargo" id="Cargo" required="true" placeholder="Escribe el Cargo" maxlength="20"> *
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				<input type="text" name="Disciplinas_Asignadas" id="Disciplinas_Asignadas" required="true" placeholder="Disciplinas Asignadas" maxlength="50"> *
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 				<input type="text" name="Tutorado" id="Tutorado" required="true" placeholder="Grupo Tutorado" maxlength="20"  style="width:120px;height:15px"> *
@@ -123,22 +123,23 @@
 			
 	</legend>
 		</fieldset>
+	
 		</div>
 		<br>
-<label>
-	<br>
-	<input class="button " type="submit" name="Guardar" value="Dar de Alta Estudiante" style="background-color: #B5771E; color: white; border:1px  " >
-	&emsp;&emsp;
-	<input class="button cajast" type="submit" name="Guardar" value="Ver Lista de Estudiantes" style="background-color: #B5771E; color: white; border:1px ">
-	&emsp;&emsp;
-	<input class="button cajast" type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
-	</label>
-	<br>
-	<br>
+		<label>
+			<br>
+			<input class="button " type="submit" name="Guardar" value="Dar de Alta Docente" style="background-color: #B5771E; color: white; border:1px  " >
+			&emsp;&emsp;
+			<input class="button " type="submit" name="Guardar" value="Ver Lista de Docente" style="background-color: #B5771E; color: white; border:1px ">
+			&emsp;&emsp;
+			<input class="button " type="reset" name="Limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
+
+		</label>
+		<br>
+		<br>
 	</form>
 
-   			</form>
-   		</div>
+		</div>
 	</div>
 
 </body>

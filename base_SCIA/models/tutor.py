@@ -7,20 +7,20 @@ class Tutor(models.Model):
 	)
 
 	Matricula = models.ForeignKey(
-		'Datos_Academicos',
-		on_delete=models.CASCADE
+		'Estudiante',
+		on_delete=models.CASCADE,
 	)
 
-	Nombre_Completo  = models.CharField(
+	Nombre_CompletoT  = models.CharField(
 		max_length = 40,
 	)
 
-	Direccion  = models.CharField(
+	DireccionT  = models.CharField(
 		max_length = 40,
 	)
 
-	Telefono = models.IntegerField(
+	TelefonoT = models.IntegerField(
 	)
 	
 	def __str__(self):
-		return '%s %s %s' % (self.Matricula, self.Nombre_Completo, self.Direccion, self.Telefono)
+		return '%s %s %s %s' % (self.Matricula, self.Nombre_CompletoT, self.DireccionT, self.TelefonoT)
