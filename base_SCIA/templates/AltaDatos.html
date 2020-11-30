@@ -19,8 +19,8 @@
 		<div align="center">
 				{% block content %} 
 					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 650px; border-image: initial; border: 0px solid white" >
-							<legend align="center"><h2><b><i>  Alta Estudiante</i></b></h2> </legend>
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 550px; border-image: initial; border: 0px solid white" >
+							<legend align="center"><h2><b><i>  Datos Procedencia y de Tutor </i></b></h2> </legend>
 							{% for field in form %}
 							<br>
 							{{field.label}} <br>

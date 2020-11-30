@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #E1EEE9;">
+	<meta charset="UTF-8">
+	<title>Alta de Estudiantes</title>
+	
+	{%include 'encabezado2.html'%}
+	{%load static%}
+	{%include 'lateral.html'%}
+	{% load bootstrap4%}
+
+	{% bootstrap_css %}
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+</head>
+
+<body style="background-color: #018989; font-family: Roboto;">
+	<center><h2><b><i> Alta Aspirantes </i></b></h2></center>
+	<br>
+	<div class="container" >
+		<div align="center">
+			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
+				{% block content %} 
+					<form method="POST"> {% csrf_token %}
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
+							<br>
+							<div class="row">
+								<div class="col">
+									<label> Nombre:</label>
+									<input type="text" class="form-control" name="Nombre" id="Nombre" required="true" placeholder="Nombre" maxlength="30" value="{{Nombre}}" style="text-transform: capitalize;">
+								</div>
+								<div class="col">
+									<label> Apellido Paterno:</label>
+									<input type="text" class="form-control" name="Apellido_Paterno" id="Apellido_Paterno" required="true" placeholder="Primer Apellido" maxlength="20" value="{{Apellido_Paterno}}" style="text-transform: capitalize;">
+								</div>
+								<div class="col">
+									<label>Apellido Materno</label>
+									<input type="text" class="form-control" name="Apellido_Materno" id="Apellido_Materno" required="true" placeholder="Segundo Apellido" maxlength="20" value="{{Apellido_Materno}}" style="text-transform: capitalize;">
+								</div>
+								<div class="col">
+									<label> Cargo:</label>
+									<input type="text" class="form-control" name="Cargo" id="Cargo" required="true" placeholder="Cargo" maxlength="20" value="{{Cargo}}" style="text-transform: capitalize;">
+								</div>
+							</div>
+							<br>
+							<br>
+
+							<div class="row">
+								<div class="col">
+									<label> Edad:</label>
+									<input type="number" class="form-control" name="Edad" id="Edad" required="true" placeholder="Edad" maxlength="2" value="{{Edad}}">
+								</div>
+								<div class="col">
+									<label>Genero: </label>
+									<input type="text" class="form-control" name="Genero" id="Genero" required="true" placeholder="Genero M F" maxlength="1" value="{{Genero}}" style="text-transform: capitalize;">
+								</div>
+								<div class="col">
+									<label>Telefono</label>
+									<input type="number" class="form-control" name="Telefono" required="true" id="Telefono" placeholder="Teléfono" value="{{Telefono}}">
+								</div>
+								<div class="col">
+									<label>Dirección:</label>
+									<input type="text" class="form-control"  name="Direccion" required="true" id="Direccion" placeholder="Dirección" value="{{Direccion}}" style="text-transform: capitalize;">
+								</div>
+							</div>
+							<br>
+							<br>
+							<div class="row">
+								<div class="col">
+									<label> Código Postal:</label>
+									<input type="number" class="form-control" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." value="{{Codigo_Postal}}">
+								</div>
+								<div class="col">
+									<label>CURP:</label>
+									<input type="text" class="form-control" name="CURP" required="true" id="CURP" placeholder="CURP" value="{{CURP}}" maxlength="18" style="text-transform: uppercase;">
+								</div>
+								<div class="col">
+									<label>Fecha Nacimiento:</label>
+									<input type="date" class="form-control" name="Fecha_Nacimiento" required="true" id="Fecha_Nacimiento" value="{{Fecha_Nacimiento}}">
+								</div>
+								<div class="col">
+									<label>Lugar de Nacimiento:</label>
+									<input type="text" class="form-control" name="Lugar_Nacimiento" required="true" id="Lugar_Nacimiento" placeholder="Lugar de Nacimiento"  value="{{Lugar_Nacimiento}}" style="text-transform: capitalize;">
+								</div>
+							</div>
+							<br>
+							<br>
+							<div class="row"> 
+								<div class="col">
+									<label>Correo Electrónico:</label>
+									<input type="email" class="form-control" name="Correo_Electronico" required="true" id="Correo_Electronico" placeholder="example@gmail.com"  value="{{Correo_Electronico}}">
+								</div>
+								<div class="col">
+									<label>Grupo Sanguineo:</label>
+									<input type="text" class="form-control" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" maxlength="2" placeholder="Grupo Sanguíneo" value="{{Grupo_Sanguineo}}"style="text-transform: capitalize;">
+								</div>
+							</div>
+							</fieldset>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<label >
+								<br>
+								<input class="button " type="submit" name="guardar" value="Dar de Alta Aspirante" style="background-color: #03a45e; color: white; border:1px" >
+								&emsp;&emsp;
+								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
+							</label>
+							<br>
+					</form>
+					{% endblock %}
+			</div>
+		</div>
+	</div>
+
+</body>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

@@ -49,7 +49,7 @@ body {
  
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #FFFFFF;
+    background-color: #222222;
     overflow: hidden;
 }
  
@@ -57,7 +57,7 @@ body {
 .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #00acac;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -99,7 +99,7 @@ a svg{
 }
 
 .menu{
-  background: #000;
+  background: #018989;
   display: none;
   padding: 5px;
   width: 320px;

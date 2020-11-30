@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head tyle="background-color: #E1EEE9;">
+	<meta charset="UTF-8">
+		<title>Alta de Estudiantes</title>
+
+	{%load static%}
+	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.css'%}" type="text/css" media="all" />
+</head>
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+<br>
+		<center><h2><b><i> ALTA DE ESTUDIANTES </i></b></h2></center>
+
+<br>
+	<div align="center">
+		<div class="ajustarT" align="center" style="background-color: #C6B396; width: 1205px">
+{% block content %}
+			<form method="POST" style="border-image: initial; border: 3px solid #DC971A"> {% csrf_token %}
+<br>
+<br>
+					
+		<div lass="imgcontainer" align="center">
+		<br>
+		<legend align="center"><h2><b><i> Datos de Tutor del  Estudiante </i></b></h2> </legend>
+		<fieldset id="fieldset1" style="background-color: #E3C8A1; width: 1160px; height: 550px; border-image: initial; border: 0px solid white">
+
+	{{form.as_p}}
+
+		</fieldset>
+		</div>
+		<br>
+<label>
+	<br>
+	<input class="button " type="submit" name="guardar" value="Guardar datos Tutor" style="background-color: #B5771E; color: white; border:1px  " >
+	&emsp;&emsp;
+	<input class="button " type="submit" name="Guardar" value="Ver Lista de Tutor" style="background-color: #B5771E; color: white; border:1px ">
+	&emsp;&emsp;
+	<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #B5771E; color: white; border:1px;" onclick="Campos limpios" >
+	</label>
+	<br>
+	<br>
+	</form>
+
+{% endblock %}
+		</div>
+	</div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

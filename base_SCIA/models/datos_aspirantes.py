@@ -1,6 +1,6 @@
 from django.db import models
 
-class Datos_Personales(models.Model):
+class Datos_Aspirantes(models.Model):
 
 	Id_Personales = models.AutoField(
 			primary_key = True,
@@ -17,6 +17,10 @@ class Datos_Personales(models.Model):
 				max_length = 20,
 		)
 	
+	Cargo= models.CharField(
+		max_length = 20,
+		)
+
 	Edad = models.IntegerField(
 		)
 	
@@ -53,8 +57,8 @@ class Datos_Personales(models.Model):
 		)
 
 def __str__(self):
-				return '%s %s %s %s %s %s %s %s %s %s %s %s %s' % (self.Nombre, self.Apellido_Paterno, self.Apellido_Materno, 
-					self.Edad, self.Genero, self.Telefono, self.Direccion, self.Codigo_Postal, 
+				return '%s %s %s %s %s %s %s %s %s %s %s %s %s %s' % (self.Nombre, self.Apellido_Paterno, self.Apellido_Materno, 
+					self.Cargo, self.Edad, self.Genero, self.Telefono, self.Direccion, self.Codigo_Postal, 
 					self.CURP, self.Fecha_Nacimiento, self.Lugar_Nacimiento, self.Correo_Electronico, self.Grupo_Sanguineo)
 
 

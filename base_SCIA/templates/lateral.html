@@ -10,7 +10,7 @@
 
 </head>
 <body > 
-<nav class="topnav">
+<nav class="topnav" style="background-color: #018989;">
   <a href="#" onclick="openNav()">
     <svg width="30" height="30" id="icoOpen">
         <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
@@ -29,7 +29,7 @@
 
 <br>
 <ul class="acor">
-  <li ><a href="#"><h5><img src="{%static 'base_aspirantes/images/encabezado/activo.png'%}" alt="activo" align="left" width="8px" height="9px">&emsp;&emsp;Administrador&emsp;<img src="{%static 'base_aspirantes/images/encabezado/flecha.png'%}" alt="activo" align="right" width="18px" height="18px"> </h5> </a>
+  <li ><a href="#"><img src="{%static 'base_aspirantes/images/encabezado/activo.png'%}" alt="activo" align="left" width="8px" height="9px">&emsp;&emsp;Administrador&emsp;<img src="{%static 'base_aspirantes/images/encabezado/flecha.png'%}" alt="activo" align="right" width="18px" height="18px">  </a>
 
     <ul>
       <li><a href="#">Cambiar contraseña</a></li>
@@ -44,20 +44,32 @@
 
 
 <ul class="acorh">
+  
+   <li><a href="#">Aspirantes</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/AltaEstudiante" >Alta Aspirantes</a></li>
+    <li><a href="http://127.0.0.1:8000/DatosAcademicosEstudiante">Lista Aspirantes</a></li>
+    </ul>
+  </li>
+
+  <li><a href="#">Disciplinas</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/AltaEstudiante" >Disciplinas cursando</a></li>
+    <li><a href="http://127.0.0.1:8000/DatosAcademicosEstudiante">Disciplinas cursadas</a></li>
+    </ul>
+  </li>
+
   <li><a href="#">Estudiantes</a>
     <ul>
       <li><a href="http://127.0.0.1:8000/AltaEstudiante" >Dar de Alta Estudiante</a></li>
-    <li><a href="http://127.0.0.1:8000/DatosPersonalesEstudiante">Datos Personales</a></li>
-    <li><a href="http://127.0.0.1:8000/DatosAcademicosEstudiante">Datos Academicos</a></li>
-    <li><a href="http://127.0.0.1:8000/DatosProcedenciaEstudiante">Datos Procedencia</a></li>
+    <li><a href="http://127.0.0.1:8000/DatosPersonalesEstudiante">Lista Estudiantes</a></li>
     </ul>
   </li>
 
   <li><a href="#">Docentes</a>
     <ul>
       <li><a href="http://127.0.0.1:8000/AltaDocente">Dar de Alta Docentes</a></li>
-    <li><a href="http://127.0.0.1:8000/DatosPersonalesDocente">Datos Personales</a></li>
-    <li><a href="http://127.0.0.1:8000/DatosAcademicosDocente">Datos Academicos</a></li>
+    <li><a href="http://127.0.0.1:8000/DatosPersonalesDocente">Lista Docente</a></li>
     </ul>
   </li>
 

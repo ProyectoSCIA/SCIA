@@ -6,6 +6,12 @@ class Datos_Procedencia(models.Model):
 		primary_key = True,
 	)
 
+	
+	Id_Aspirante = models.ForeignKey(
+		'Datos_Aspirantes',
+		on_delete=models.CASCADE,
+	)
+
 	Nivel_Basico = models.CharField(
 		max_length = 20,
 	)
@@ -13,7 +19,7 @@ class Datos_Procedencia(models.Model):
 	Año_Egreso = models.IntegerField(
 	)
 
-	Promedio  = models.DecimalField (
+	Promedio_General  = models.DecimalField (
 	max_digits = 5, decimal_places = 2,
 	)
 	

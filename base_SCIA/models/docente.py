@@ -2,24 +2,20 @@ from django.db import models
 
 class Docente(models.Model):
 	
-	Cedula_Profesional = models.CharField(
+	Id_Docente = models.AutoField(
 		primary_key = True,
+		)
+
+	Id_Aspirante = models.ForeignKey('Datos_Aspirantes',
+		on_delete=models.CASCADE,
+		)
+
+	Cedula_Profesional = models.CharField(
 		max_length=30,
-		)
-
-	Id_Personales_Docente = models.ForeignKey('Datos_Personales_Docente',
-		on_delete=models.CASCADE,
-		)
-
-	Clave_Disciplina = models.ForeignKey('Disciplinas',
-		on_delete=models.CASCADE,
-		)
-
-	Cargo = models.CharField(max_length=30, 
 		)
 
 	Tutorado = models.CharField(max_length=30, 
 		)
 
 def __str__(self):
-		return '%s %s %s %s' % (self.Id_Personales_Docente, self.Clave_Disciplina, self.Cargo, self.Tutorado)
+		return '%s %s %s' % (self.Id_Aspirante, self.Cedula_Profesional, self.Tutorado)

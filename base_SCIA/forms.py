@@ -2,49 +2,39 @@ from django.forms import ModelForm
 
 from betterforms.multiform import MultiModelForm
 
-from base_SCIA.models.datos_personales import Datos_Personales
+from base_SCIA.models.datos_aspirantes import Datos_Aspirantes
 from base_SCIA.models.datos_procedencia import Datos_Procedencia
+from base_SCIA.models.tutor import Tutor
+from django import forms
 
 
-#from base_SCIA.models.datos_personales_docente import Datos_Personales_Docente
-#from base_SCIA.models.docente import Docente
+#Clase pafa agregar un aspirante
 
-class PersonalesModelForm(ModelForm):
+
+#Clase para agregar un estudiante
+class TutorModelForm(ModelForm):
 	class Meta:
-		model = Datos_Personales
-		fields = '__all__'
-
+		model = Tutor
+		fields= '__all__'
+# estilo Usando los 
+#		fields = 'Id_Personales','Nombre', 'Apellido_Paterno', 'Apellido_Materno','Edad', 'Genero', 'Telefono', 'Direccion', 'Codigo_Postal','CURP', 'Fecha_Nacimiento', 'Lugar_Nacimiento', 'Correo_Electronico', 'Grupo_Sanguineo'
 
 class ProcedenciaModelForm(ModelForm):
 	class Meta:
 		model = Datos_Procedencia
-		fields = '__all__'
-
+		fields= '__all__'
+# estilo Usando los 
+#		fields = 'Id_Procedencia', 'Nivel_Basico', 'Año_Egreso', 'Promedio'
 
 class EstudianteModelForm(MultiModelForm):
 	form_classes = {
-		'Datos_Personales': PersonalesModelForm,
 		'Datos_Procedencia': ProcedenciaModelForm,
+		'Tutor': TutorModelForm,
 	}
 
 
 
 
 
-#class PersonalesDocentesModelForm(ModelForm):
-#	class Meta:
-#		model = Datos_Personales_Docente
-#		fields = '__all__'
 
 
-#class DocenteModelForm(ModelForm):
-#	class Meta:
-#		model = Docente
-#		fields = '__all__'
-
-
-#class DocentesModelForm(MultiModelForm):
-#	form_classes = {
-#		'Datos_Personales_Docente': PersonalesDocentesModelForm,
-#		'Docente': DocenteModelForm,
-#	}

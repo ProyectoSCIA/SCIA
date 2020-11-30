@@ -2,12 +2,17 @@ from django.db import models
 
 class Estudiante(models.Model):
 
-
-	Matricula = models.IntegerField(
+	Id_Estudiante = models.AutoField(
 		primary_key = True,
+		)
+
+	Id_Tutor = models.ForeignKey(
+		'Tutor',
+		on_delete=models.CASCADE,
 	)
-	
-	Id_Personales = models.ForeignKey('Datos_Personales',
+
+	Id_Procedencia = models.ForeignKey(
+		'Datos_Procedencia',
 		on_delete=models.CASCADE,
 	)
 	
@@ -15,17 +20,15 @@ class Estudiante(models.Model):
 		'Disciplinas_Cursando',
 		on_delete=models.CASCADE,
 	)
-	
-	Id_Tutor = models.ForeignKey(
-		'Tutor',
+
+	Id_Cursadas = models.ForeignKey(
+		'Disciplinas_Cursadas',
 		on_delete=models.CASCADE,
 	)
-	
-	Id_Procedencia = models.ForeignKey(
-		'Datos_Procedencia',
-		on_delete=models.CASCADE,
+
+	Matricula = models.IntegerField(
+
 	)
-	
 
 	Grado = models.IntegerField(
 		)
@@ -47,5 +50,7 @@ class Estudiante(models.Model):
 		)
 
 def __str__(self):
-		return '%s %s %s %s %s %s %s %s %s' % (self.Id_Personales, self.Id_Cursando,
-			self.Id_Tutor, self.Id_Procedencia, self.Grado, self.Grupo, self.Inscrito, self.Estatus, self.Promedio_General)
+		return '%s %s %s %s %s %s %s %s %s %s %s' % (self.Id_Aspirante, self.Id_Tutor,
+			self.Id_Procedencia, self.Id_Cursando, self.Id_Cursandas, self.Matricula,
+			 self.Grado, self.Grupo, self.Inscrito,
+			 self.Estatus, self.Promedio_General)

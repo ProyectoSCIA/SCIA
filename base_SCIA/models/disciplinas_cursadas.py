@@ -6,11 +6,13 @@ class Disciplinas_Cursadas(models.Model):
 		primary_key = True,
 		)
 
-	Clave_Discipina = models.ForeignKey('Disciplinas',
+	Id_Discipina = models.ForeignKey(
+		'Disciplinas',
 		on_delete=models.CASCADE,
 		)
 
-	Nombre = models.CharField(max_length=30,
+	Nombre_Cursadas = models.CharField(
+		max_length=30,
 		)
 
 	Calificacion = models.DecimalField (
@@ -18,4 +20,4 @@ class Disciplinas_Cursadas(models.Model):
 		)
 
 def __str__(self):
-		return '%s %s %s' % (self.Clave_Discipina, self.Nombre, self.Calificacion)
+		return '%s %s %s' % (self.Id_Discipina, self.Nombre_Cursadas, self.Calificacion)

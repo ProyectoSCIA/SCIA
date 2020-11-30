@@ -6,17 +6,21 @@ class Clase(models.Model):
 		primary_key = True,
 		)
 
-	Cedula_Profesional = models.ForeignKey('Docente',
+	Id_Disciplina = models.ForeignKey(
+		'Disciplinas',
 		on_delete=models.CASCADE,
 		)
 
-	Matricula = models.ForeignKey('Estudiante',
+	Id_Docente = models.ForeignKey(
+		'Docente',
 		on_delete=models.CASCADE,
 		)
 
-	Clave_Disciplina = models.ForeignKey('Disciplinas',
-		on_delete=models.CASCADE,
+	Nombre_Clase = models.CharField(
+		max_length=30,
 		)
+
+
 
 	def __str__(self):
-		return '%s %s %s' % (self.Cedula_Profesional, self.Matricula, self.Clave_Disciplina)
+		return '%s %s %s' % (self.Id_Disciplina, self.Id_Docente, self.Nombre_Clase)
