@@ -2,19 +2,16 @@ from django.db import models
 
 class Docente(models.Model):
 	
-	Id_Docente = models.AutoField(
+	Cedula_Profesional = models.CharField(
 		primary_key = True,
+		max_length=20,
 		)
 
 	Id_Aspirante = models.ForeignKey('Datos_Aspirantes',
 		on_delete=models.CASCADE,
 		)
 
-	Cedula_Profesional = models.CharField(
-		max_length=30,
-		)
-
-	Tutorado = models.CharField(max_length=30, 
+	Grupo_Tutorado = models.CharField(max_length=30, 
 		)
 
 def __str__(self):

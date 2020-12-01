@@ -2,8 +2,9 @@ from django.db import models
 
 class Datos_Aspirantes(models.Model):
 
-	Id_Personales = models.AutoField(
+	Id_Personales = models.CharField(
 			primary_key = True,
+			max_length=4,
 		)
 	Nombre = models.CharField(
 				max_length = 20,

@@ -2,12 +2,9 @@ from django.db import models
 
 class Disciplinas(models.Model):
 	
-	Id_Disciplina = models.AutoField(
+	Id_Disciplina = models.CharField(
 		primary_key = True, 
-		)
-
-	Clave_Disciplina = models.CharField(
-		max_length=30,
+		max_length=4,
 		)
 
 	Nombre_Disciplina = models.CharField(

@@ -26,6 +26,10 @@
 							<br>
 							<div class="row">
 								<div class="col">
+									<label> Id Aspirante:</label>
+									<input type="text" class="form-control" name="Id_Personales" id="Id_Personales" required="true" placeholder="Clave" maxlength="20" value="{{Id_Personales}}" style="text-transform: capitalize;">
+								</div>
+								<div class="col">
 									<label> Nombre:</label>
 									<input type="text" class="form-control" name="Nombre" id="Nombre" required="true" placeholder="Nombre" maxlength="30" value="{{Nombre}}" style="text-transform: capitalize;">
 								</div>
@@ -37,15 +41,15 @@
 									<label>Apellido Materno</label>
 									<input type="text" class="form-control" name="Apellido_Materno" id="Apellido_Materno" required="true" placeholder="Segundo Apellido" maxlength="20" value="{{Apellido_Materno}}" style="text-transform: capitalize;">
 								</div>
-								<div class="col">
-									<label> Cargo:</label>
-									<input type="text" class="form-control" name="Cargo" id="Cargo" required="true" placeholder="Cargo" maxlength="20" value="{{Cargo}}" style="text-transform: capitalize;">
-								</div>
 							</div>
 							<br>
 							<br>
 
 							<div class="row">
+								<div class="col">
+									<label> Cargo:</label>
+									<input type="text" class="form-control" name="Cargo" id="Cargo" required="true" placeholder="Cargo" maxlength="20" value="{{Cargo}}" style="text-transform: capitalize;">
+								</div>
 								<div class="col">
 									<label> Edad:</label>
 									<input type="number" class="form-control" name="Edad" id="Edad" required="true" placeholder="Edad" maxlength="2" value="{{Edad}}">
@@ -58,14 +62,14 @@
 									<label>Telefono</label>
 									<input type="number" class="form-control" name="Telefono" required="true" id="Telefono" placeholder="Teléfono" value="{{Telefono}}">
 								</div>
-								<div class="col">
-									<label>Dirección:</label>
-									<input type="text" class="form-control"  name="Direccion" required="true" id="Direccion" placeholder="Dirección" value="{{Direccion}}" style="text-transform: capitalize;">
-								</div>
 							</div>
 							<br>
 							<br>
 							<div class="row">
+								<div class="col">
+									<label>Dirección:</label>
+									<input type="text" class="form-control"  name="Direccion" required="true" id="Direccion" placeholder="Dirección" value="{{Direccion}}" style="text-transform: capitalize;">
+								</div>
 								<div class="col">
 									<label> Código Postal:</label>
 									<input type="number" class="form-control" name="Codigo_Postal" required="true" id="Codigo_Postal" placeholder="C.P." value="{{Codigo_Postal}}">
@@ -78,14 +82,14 @@
 									<label>Fecha Nacimiento:</label>
 									<input type="date" class="form-control" name="Fecha_Nacimiento" required="true" id="Fecha_Nacimiento" value="{{Fecha_Nacimiento}}">
 								</div>
-								<div class="col">
-									<label>Lugar de Nacimiento:</label>
-									<input type="text" class="form-control" name="Lugar_Nacimiento" required="true" id="Lugar_Nacimiento" placeholder="Lugar de Nacimiento"  value="{{Lugar_Nacimiento}}" style="text-transform: capitalize;">
-								</div>
 							</div>
 							<br>
 							<br>
 							<div class="row"> 
+									<div class="col">
+									<label>Lugar de Nacimiento:</label>
+									<input type="text" class="form-control" name="Lugar_Nacimiento" required="true" id="Lugar_Nacimiento" placeholder="Lugar de Nacimiento"  value="{{Lugar_Nacimiento}}" style="text-transform: capitalize;">
+								</div>
 								<div class="col">
 									<label>Correo Electrónico:</label>
 									<input type="email" class="form-control" name="Correo_Electronico" required="true" id="Correo_Electronico" placeholder="example@gmail.com"  value="{{Correo_Electronico}}">
@@ -104,10 +108,22 @@
 							<br>
 							<label >
 								<br>
-								<input class="button " type="submit" name="guardar" value="Dar de Alta Aspirante" style="background-color: #03a45e; color: white; border:1px" >
+								<input class="button " type="submit" name="guardar" value="Guardar Aspirante" style="background-color: #03a45e; color: white; border:1px" >
 								&emsp;&emsp;
 								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
 							</label>
+							<br>
+							<div class="row">
+								<div class="col">
+									<br>
+									<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaAdministrador'" value=" Alta Administrador"> 
+									&emsp;&emsp;
+									<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaDocente'" value=" Alta Docente"> 
+									&emsp;&emsp;
+									<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaDatos'" value=" Alta Estudiante"> 
+								</div>
+								
+							</div>
 							<br>
 					</form>
 					{% endblock %}

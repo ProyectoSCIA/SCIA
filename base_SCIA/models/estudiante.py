@@ -2,8 +2,9 @@ from django.db import models
 
 class Estudiante(models.Model):
 
-	Id_Estudiante = models.AutoField(
+	Matricula = models.CharField(
 		primary_key = True,
+		max_length = 6,
 		)
 
 	Id_Tutor = models.ForeignKey(
@@ -24,10 +25,6 @@ class Estudiante(models.Model):
 	Id_Cursadas = models.ForeignKey(
 		'Disciplinas_Cursadas',
 		on_delete=models.CASCADE,
-	)
-
-	Matricula = models.IntegerField(
-
 	)
 
 	Grado = models.IntegerField(

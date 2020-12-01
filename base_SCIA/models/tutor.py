@@ -3,8 +3,9 @@ from django.db import models
 
 class Tutor(models.Model):
 
-	Id_Tutor = models.AutoField(
+	Id_Tutor = models.CharField(
 		primary_key = True,
+		max_length=4,
 	)
 
 	

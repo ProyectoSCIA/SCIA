@@ -2,8 +2,9 @@ from django.db import models
 
 class Datos_Procedencia(models.Model):
 
-	Id_Procedencia = models.AutoField(
+	Id_Procedencia = models.CharField(
 		primary_key = True,
+		max_length=4,
 	)
 
 	

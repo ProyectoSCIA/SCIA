@@ -19,7 +19,7 @@
 		<div align="center">
 				{% block content %} 
 					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 550px; border-image: initial; border: 0px solid white" >
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 650px; border-image: initial; border: 0px solid white" >
 							<legend align="center"><h2><b><i>  Datos Procedencia y de Tutor </i></b></h2> </legend>
 							{% for field in form %}
 							<br>
@@ -32,8 +32,8 @@
 								<input class="button " type="submit" name="guardar" value="Guardar Datos" style="background-color: #03a45e; color: white; border:1px ">
 								&emsp;&emsp;
 								<!--<input class="button " type="submit" name="Guardar" value="Ver Lista de Aspirantes" style="background-color: #03a45e; color: white; border:1px ">
-								&emsp;&emsp;
-								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" > -->
+								&emsp;&emsp; -->
+								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
 							</label>
 							</fieldset>
 							<br>

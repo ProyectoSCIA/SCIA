@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head tyle="background-color: #E1EEE9;">
-	<meta charset="utf-8">
-		<title>Alta Docentes</title>
-
-	{%load static%}
+<head style="background-color: #E1EEE9;">
+	<meta charset="UTF-8">
+	<title>Alta de Estudiantes</title>
+	
 	{%include 'encabezado2.html'%}
+	{%load static%}
 	{%include 'lateral.html'%}
-<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
-<link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.css'%}" type="text/css" media="all" />
+	{% load bootstrap4%}
+
+	{% bootstrap_css %}
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
 </head>
+
 <body style="background-color: #018989; font-family: Roboto;">
 	
 		<div align="center">
 				{% block content %} 
 					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 550px; border-image: initial; border: 0px solid white" >
-							<legend align="center"><h2><b><i>  Datos Docente </i></b></h2> </legend>
-							{{form}}
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 650px; border-image: initial; border: 0px solid white" >
+							<legend align="center"><h2><b><i>  Disciplinas Cursadas</i></b></h2> </legend>
+							{% for field in form %}
+							<br>
+							{{field.label}} <br>
+							{{field}}
+							{%endfor%}
 							<br>
 							<label>
 								<br>
@@ -37,13 +45,7 @@
 </body>
 <br>
 <br>
-<br>
 <footer>
 	{%include 'footer.html'%}
 </footer>
 </html>
-
-
-
-
-

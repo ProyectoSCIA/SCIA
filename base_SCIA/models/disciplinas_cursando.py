@@ -3,8 +3,9 @@ from django.db import models
 class Disciplinas_Cursando(models.Model):
 
 
-	Id_Cursando = models.AutoField(
+	Id_Cursando = models.CharField(
 		primary_key = True,
+		max_length=4,
 	)
 
 	Id_Disciplina = models.ForeignKey(

@@ -2,8 +2,9 @@ from django.db import models
 
 class Clase(models.Model):
 	
-	Id_Clase = models.AutoField(
+	Id_Clase = models.CharField(
 		primary_key = True,
+		max_length=4,
 		)
 
 	Id_Disciplina = models.ForeignKey(

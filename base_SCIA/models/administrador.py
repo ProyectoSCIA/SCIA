@@ -2,8 +2,9 @@ from django.db import models
 
 class Administrador(models.Model):
 	
-	Id_Administrador = models.AutoField(
+	Id_Administrador = models.CharField(
 		primary_key = True,
+		max_length=4,
 		)
 
 	Id_Personales = models.ForeignKey(

@@ -1,18 +1,25 @@
 from django.http import Http404
 from django.template import loader
 from django.urls import reverse
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView
 from django.views.generic import TemplateView
+from django.views.generic import ListView
+
 from base_SCIA.models.datos_aspirantes import Datos_Aspirantes
 from base_SCIA.models.datos_procedencia import Datos_Procedencia
 from base_SCIA.models.tutor import Tutor
 from base_SCIA.models.estudiante import Estudiante
 from base_SCIA.models.administrador import Administrador
+from base_SCIA.models.docente import Docente
+from base_SCIA.models.disciplinas import Disciplinas
+from base_SCIA.models.clase import Clase
+from base_SCIA.models.disciplinas_cursando import Disciplinas_Cursando
+from base_SCIA.models.disciplinas_cursadas import Disciplinas_Cursadas
 
 #agregar estudiante
 from base_SCIA.forms import EstudianteModelForm
-
 
 #agregar aspirantes
 class DatosAspirantesCreateView(CreateView):
@@ -20,15 +27,10 @@ class DatosAspirantesCreateView(CreateView):
 	template_name="AltaAspirante.html"
 	model = Datos_Aspirantes
 	fields = ('__all__')
-	success_url = 'Menu'
+	success_url = '.'
 
-#Menu
-class Menu1(TemplateView):
-	template_name = 'Menu.html'
-
-
-#alta estudiante
-class EstudianteCreateView(CreateView):
+#datos tutor procedencia estudiante
+class DatosCreateView(CreateView):
 	template_name = 'AltaDatos.html'
 	form_class = EstudianteModelForm
 
@@ -48,10 +50,7 @@ class AltaEstudianteCreateView(CreateView):
 	template_name="AltaEstudiante.html"
 	model = Estudiante
 	fields = ('__all__')
-	success_url = 'succes'
-
-class Guardar3(TemplateView):
-	template_name = 'succes.html'
+	success_url = '.'
 
 #Alta admnistrador
 class AdministradorCreateView(CreateView):
@@ -61,17 +60,64 @@ class AdministradorCreateView(CreateView):
 	fields = ('__all__')
 	success_url = 'succes'
 
+class Guardar4(TemplateView):
+	template_name = 'succes.html'
+
+#Alta docente
+class DocenteCreateView(CreateView):
+	"""docstring for EstudianteCreateView"""
+	template_name="AltaDocente.html"
+	model = Docente
+	fields = ('__all__')
+	success_url = '.'
+
+#Disciplinas
+class DisciplinasCreateView(CreateView):
+	"""docstring for EstudianteCreateView"""
+	template_name="Disciplinas.html"
+	model = Disciplinas
+	fields = ('__all__')
+	success_url = '.'
+
+#Clases
+class ClasesCreateView(CreateView):
+	"""docstring for EstudianteCreateView"""
+	template_name="Clases.html"
+	model = Clase
+	fields = ('__all__')
+	success_url = '.'
+
+#Disciplinas cursando
+class DisciplinasCursandoCreateView(CreateView):
+	"""docstring for EstudianteCreateView"""
+	template_name="DisciplinasCursando.html"
+	model = Disciplinas_Cursando
+	fields = ('__all__')
+	success_url = '.'
+
+#Disciplinas cursadas
+class DisciplinasCursadasCreateView(CreateView):
+	"""docstring for EstudianteCreateView"""
+	template_name="DisciplinasCursadas.html"
+	model = Disciplinas_Cursadas
+	fields = ('__all__')
+	success_url = '.'
+
+#Lista de aspirantes
+class ListaAspiranteListView(ListView):
+	"""docstring for ListaAspirante"""
+	model = Datos_Aspirantes
+	paginate_by = 20
+
+	def get_queryset(self):
+		queryset = super(ListaAspiranteListView, self).get_queryset()
+		return queryset.filter(Nombre=True)
+
 def encabezado (request):
 	return render(request,'encabezado.html')
 
 def footer (request):
 	return render(request,'footer.html')
-
-def home (request):
-	return render(request,'home.html')
-
-def login (request):
-	return render(request,'login.html')
 
 def encabezado2 (request):
 	return render(request,'encabezado2.html')
@@ -79,61 +125,21 @@ def encabezado2 (request):
 def encabezadoE (request):
 	return render(request,'encabezadoE.html')
 
-def ListaDetalleEstudiante (request):
-	lista = Datos_Personales.objects.filter()
+def ListaDetalleAspirante (request):
+	lista = Datos_Aspirantes.objects.filter()
 	lista2 = Datos_Procedencia.objects.filter()
-	lista3 = Tutor.objects.filter()
-	return render(request,'ListaDetalleEstudiante.html',{
+	return render(request,'ListaDetalleAspirante.html',{
 		'lista':lista,
 		'lista2':lista2,
-		'lista3':lista3,
 		},
 		)
 
-def DatosPersonalesEstudiante (request):
-	return render(request,'DatosPersonalesEstudiante.html')
-
-def DatosAcademicosEstudiante (request):
-	return render(request,'DatosAcademicosEstudiante.html')
-
-def DatosProcedenciaEstudiante (request):
-	return render(request,'DatosProcedenciaEstudiante.html')
-
-#def AltaDocente (request):
-#	return render(request,'AltaDocente.html')
-
+	#lista de detalles de docente
 def ListaDetalleDocente (request):
-
-	return render(request,'ListaDetalleDocente.html')
-
-def DatosPersonalesDocente (request):
-	return render(request,'DatosPersonalesDocente.html')
-
-def DatosAcademicosDocente (request):
-	return render(request,'DatosAcademicosDocente.html')
-
-def PublicarAvisos (request):
-	return render(request,'PublicarAvisos.html')
-
-def lateral (request):
-	return render(request,'lateral.html')
-
-def formulario (request):
-	return render(request,'formulario.html')
-
-
-#generacion de clases o vistas genericas
-
-#class DatosProcedenciaCreateView(CreateView):
-	"""docstring for EstudianteCreateView"""
-#	template_name="AltaEstudiante.html"
-#	model = Datos_Procedencia
-#	fields = ('__all__')
-#	success_url = '.'
-
-#class TutorCreateView(CreateView):
-	"""docstring for EstudianteCreateView"""
-#	template_name="AltaEstudiante.html"
-#	model = Tutor
-#	fields = ('__all__')
-#	success_url = '.'
+	lista = Datos_Aspirantes.objects.filter()
+	lista2 = Datos_Procedencia.objects.filter()
+	return render(request,'ListaDetalleAspirante.html',{
+		'lista':lista,
+		'lista2':lista2,
+		},
+		)
