@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head tyle="background-color: #E1EEE9;">
+	<meta charset="utf-8">
+		<title>Alta Docentes</title>
+
+	{%load static%}
+	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.css'%}" type="text/css" media="all" />
+</head>
+<body style="background-color: #018989; font-family: Roboto;">
+	
+		<div align="center">
+				{% block content %} 
+					<form method="POST"> {% csrf_token %}
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 550px; border-image: initial; border: 0px solid white" >
+							<legend align="center"><h2><b><i>  Datos Docente </i></b></h2> </legend>
+							{{form}}
+							<br>
+							<label>
+								<br>
+								<input class="button " type="submit" name="guardar" value="Guardar Datos" style="background-color: #03a45e; color: white; border:1px ">
+								&emsp;&emsp;
+								<!--<input class="button " type="submit" name="Guardar" value="Ver Lista de Aspirantes" style="background-color: #03a45e; color: white; border:1px ">
+								&emsp;&emsp; -->
+								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
+							</label>
+							</fieldset>
+							<br>
+					</form>
+					{% endblock %}
+			
+		</div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>
+
+
+
+
+

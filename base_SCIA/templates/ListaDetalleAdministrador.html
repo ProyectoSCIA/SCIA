@@ -9,11 +9,11 @@
 	{% bootstrap_css %}
 	{%include 'encabezado2.html'%}
 	{%include 'lateral.html'%}
-
+	
 	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
 </head>
 <body style="background-color: #018989; font-family: Roboto;">
-	<center><h2><b><i> Lista Docentes </i></b></h2></center>
+	<center><h2><b><i> Lista Administradores </i></b></h2></center>
 	<br>
 	<div class="container" >
 		<div align="center">
@@ -23,35 +23,27 @@
 						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
 							<br>
 							<table class="table table-bordered" width="100%"  border="1" cellpadding="0" cellspacing="0">
-			<td> <b> Cedula</b></td>
+			<td> <b> Id Administrador</b></td>
 			<td> <b> Id Aspirante</b></td>
-			<td> <b> Grupo Tutorado</b></td>
 
-			{% for listad in listad %}
+			{% for listaa in listaa %}
 			<tr> 
-					<td> {{listad.Cedula_Profesional}} </td>
-					<td>  {{listad.Id_Aspirante}} </td>
-					<td> {{listad.Grupo_Tutorado}} </td>
+					<td> {{listaa.Id_Administrador}} </td>
+					<td> {{listaa.Id_Personales}} </td>
 					<td> 
-					<a class = "btn btn-primary" href=" {% url 'EditarDocente' listad.Cedula_Profesional %}">Editar</a> 
-				</td>		
+					<a class = "btn btn-primary" href=" {% url 'AdministradorEditar' listaa.Id_Administrador %}">Editar</a> 
+				</td>
 			{% endfor %}
-							</table>
-						</fieldset>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<label >
+		</table>
+
+							</fieldset>
 							<br>
-							<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaAdministrador'" value=" Actualizar"> 
-							&emsp;&emsp;
-							<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e color: white; border:1px;" onclick="Campos limpios" >
-						</label>
-						<br>
-						<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
 					</form>
 					{% endblock %}
 			</div>

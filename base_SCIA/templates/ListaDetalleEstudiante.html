@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head tyle="background-color: #E1EEE9;">
+		<meta charset="utf-8">
+		<title>Lista de docentes</title>
+		
+	{%load static%}
+	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+</head>
+<body style="background-color: #018989; font-family: Roboto;">
+	<center><h2><b><i> Lista Aspirantes </i></b></h2></center>
+	<br>
+	<div class="container" >
+		<div align="center">
+			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
+				{% block content %} 
+					<form method="POST"> {% csrf_token %}
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
+							<br>
+							<table width="100%"  border="1" cellpadding="0" cellspacing="0">
+			<td> <b> Matricula</b></td>
+			<td> <b> Id Tutor</b></td>
+			<td> <b> Id Procedencia</b></td>
+			<td> <b> Id Cursando</b></td>
+			<td> <b> Id Cursadas</b></td>
+			<td> <b> Grado </b></td>
+			<td> <b> Grupo </b></td>
+			<td> <b> Inscrito</b></td>
+			<td> <b> Estatus</b></td>
+			<td> <b> Promedio_General</b></td>
+
+
+
+			{% for listae in listae %}
+			<tr> 
+					<td> {{listae.Matricula}} </td>
+					<td>  <p>{{listae.Id_Tutor}} </p></td>
+					<td><p>{{listae.Id_Procedencia}} </p></td>
+					<td><p>{{listae.Id_Cursando}} </p></td>
+					<td><p>{{listae.Id_Cursadas}} </p></td>
+					<td><p>{{listae.Grado}} </p></td>
+					<td><p>{{listae.Grupo}} </p></td>
+					<td><p>{{listae.Inscrito}} </p></td>
+					<td><p>{{listae.Estatus}} </p></td>
+					<td><p>{{listae.Promedio_General}} </p></td>
+		
+			{% endfor %}
+		</table>
+
+							</fieldset>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<label >
+								<br>
+								<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaAdministrador'" value=" Actualizar"> 
+								&emsp;&emsp;
+								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
+							</label>
+							<br>
+							<br>
+					</form>
+					{% endblock %}
+			</div>
+		</div>
+	</div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>
+
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

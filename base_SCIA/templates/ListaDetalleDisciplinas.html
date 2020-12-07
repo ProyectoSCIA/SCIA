@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head tyle="background-color: #E1EEE9;">
+		<meta charset="utf-8">
+		<title>Lista de docentes</title>
+		
+	{%load static%}
+	{% load bootstrap4%}
+	{% bootstrap_css %}
+	{%include 'encabezado2.html'%}
+	{%include 'lateral.html'%}
+
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+</head>
+<body style="background-color: #018989; font-family: Roboto;">
+	<center><h2><b><i> Lista de Disciplinas</i></b></h2></center>
+	<br>
+	<div class="container" >
+		<div align="center">
+			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
+				{% block content %} 
+					<form method="POST"> {% csrf_token %}
+						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
+							<br>
+							<table class="table table-bordered"  width="100%"  border="1" cellpadding="0" cellspacing="0">
+			<td> <b> Id Disciplina</b></td>
+			<td> <b> Nombre de disciplina</b></td>
+
+			{% for listadi in listadi %}
+			<tr> 
+					<td> {{listadi.Id_Disciplina}} </td>
+					<td> {{listadi.Nombre_Disciplina}} </td>
+					<td> 
+					<a class = "btn btn-primary" href=" {% url 'DisciplinasEditar' listadi.Id_Disciplina %}">Editar</a> 
+				</td>
+			{% endfor %}
+			{% endblock %}
+		</table>
+
+							</fieldset>
+							<br>
+					</form>
+					
+			</div>
+		</div>
+	</div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

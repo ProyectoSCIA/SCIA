@@ -34,6 +34,10 @@ class EstudianteModelForm(MultiModelForm):
 
 
 
+class AspiranteModelForm(forms.ModelForm):
+	class Meta:
+		model = Datos_Aspirantes
+		fields= '__all__'
 
 
 
