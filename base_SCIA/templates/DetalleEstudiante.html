@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #FFFFD1;">
+		<meta charset="utf-8">
+		<title>Panel Estudiante</title>
+		
+	{%load static%}
+	{%load bootstrap4%}
+	{%bootstrap_css %}
+	{%include 'encabezadoE.html'%}
+	{%include 'lateral.html'%}
+
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/tabla.css'%}" type="text/css" media="all" />
+</head>
+
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+	<center><h2><b><i> Panel Estudiante </i></b></h2></center>
+	<br>
+	<p>
+	Bienvenido <b>{{request.user.username}}</b>
+	</p>
+		<!-- DataTales Example -->
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">ASIGNATURAS CURSADAS</h6>
+			</div>
+		<div class="container" >
+		<div class="table-responsive" style="background-color: #FFFFD1; width: 1205px; height: 640px">
+			{% block content %} 
+			{% csrf_token %}
+			<table class="table table-striped table-hover table-sm " >
+				<tr>
+				<td> <b> # </b></td>
+				<td> <b> Id Cursando</b></td>
+				<td> <b> Calificacion Final </b></td>
+			</tr>
+			{% for listae in object_list %}
+			<tr>
+						<td><p>{{listae.Id_Cursando}} </p></td>
+						<td><p>{{listae.Promedio_General}} </p></td>
+				{% endfor %}
+				
+			</table>
+			{% endblock %}
+		</div>
+	</div>
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

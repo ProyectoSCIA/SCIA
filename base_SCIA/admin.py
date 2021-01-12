@@ -6,7 +6,6 @@ from base_SCIA import models
 admin.site.register(models.Administrador)
 admin.site.register(models.Clase)
 admin.site.register(models.Disciplinas)
-admin.site.register(models.Disciplinas_Cursadas)
 admin.site.register(models.Docente)
 admin.site.register(models.Datos_Aspirantes)
 admin.site.register(models.Datos_Procedencia)

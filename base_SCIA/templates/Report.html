@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #E1EEE9;">
+	<meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alta de Estudiantes</title>
+	{%include 'encabezado.html'%}
+	{%load static%}
+	{%include 'lateral.html'%}
+	{% load bootstrap4%}
+
+	{% bootstrap_css %}
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+
+
+</head>
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+			$('#example').DataTable( {
+				dom: 'Bfrtip',
+				buttons: [
+					'copy', 'csv', 'excel', 'pdf', 'print'
+				]
+			} );
+		} );
+		</script>
+		<div align="center">
+				{% block content %} 
+				<div class="card card-primary">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="fas fa-chart-bar"></i>
+							{{ title }}
+						</h3>
+					</div>
+						<div class="card-body">
+						<hr>
+							<fieldset>
+								<h4>
+									Yo
+									<strong contenteditable="true">
+										Ej.Jesus Guevara Rojas
+									</strong>
+									alumno(a) del
+									<strong contenteditable="true">
+										Ej.Quinto
+									</strong>
+									semestre me retiro el día de hoy
+									<strong contenteditable="true">
+										Ej.Lunes
+									</strong>
+									<strong contenteditable="true">
+										Ej.20
+									</strong>
+									de marzo de
+									<strong contenteditable="true">
+										Ej.2021
+									</strong>
+									, por motivos 
+									<strong contenteditable="true">
+										Ej.Personales
+									</strong>, asiendome responsable de lo que pase a partir de esta hora, siendo las
+									<strong contenteditable="true">
+										Ej. 10.38 am
+									</strong>
+									 de la fecha antes mencionada.
+								</h4>
+								<br><br><br>
+
+								______________________&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;________________________
+								<hr>
+								Firma del alumno&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Profe. Responsable de la Institución
+							</fieldset>
+						</div>
+				</div>
+				<br>
+				<br>
+					</form>
+					{% endblock %}
+		</div>
+</body>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

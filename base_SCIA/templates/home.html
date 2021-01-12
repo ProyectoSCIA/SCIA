@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #E1EEE9;">
+<meta charset="UTF-8">
+	
+	{%include 'encabezado2.html'%}
+	{%load static%}
+	{%include 'lateral.html'%}
+	{% load bootstrap4%}
+	{% bootstrap_css %}
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+
+</head>
+
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+
+<h2>Animated Buttons - "Pressed Effect"</h2>
+
+<input class="button "  style="background-color: #03a45e; color: white; border:1px " value="Click Me">
+<br>
+<hr>
+	<div class="busqueda">
+		<form class="navbar-search pull-left" action="/buscar" method="get">
+			{% csrf_token %}
+			<input type="text" class="search-query" placeholder="Buscar..." name="buscalo">
+			<div class="btn-group">
+				<button type="submit" class="btn btn-primary"><i class="icon icon-search"></i></button>
+			</div>
+				
+		</form>
+	</div>
+
+</body>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>
+
+
+
+</body>
+</html>

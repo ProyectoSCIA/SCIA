@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #E1EEE9;">
+	<meta charset="UTF-8">
+	<title>SCIA</title>
+	{%load static%}
+	{%include 'encabezado.html'%}
+		{%load bootstrap4%}
+	{%bootstrap_css %}
+
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+
+	<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+<body style="background-color: #FFFFD1;">
+	<br>
+	<br>
+<div align="center">
+		<div class="ajustarT" align="center" style="background-color: #FFFFFF; width: 400px">
+		<form method="POST" style="border-image: initial; border: 3px solid #DC971A">
+			<br>
+				<div lass="imgcontainer" align="center">
+			<h2><b>	<img src="{%static 'base_aspirantes/images/encabezado/acceso.png'%}" alt="acceso"  align="center" width="42px" height="46px">Registrar Usuario</b></h2>
+				</div>
+
+    {% csrf_token %}
+    <div align="center">
+    
+    <div>
+		<img src="{%static 'base_aspirantes/images/encabezado/usuario.png'%}" alt="username"  align="center" width="30px" height="30px"> <br><label><b>Nuevo Usuario</b></label><br>
+		<br><input type="text" class="form-control" placeholder="Nombre de Usuario" name="username" value="{{username}}" required>
+	</div>
+
+	<br>
+	
+	<div>
+		<img src="{%static 'base_aspirantes/images/encabezado/contraseña.png'%}" alt="password"  align="center" width="30px" height="30px"><br><label><b>Contraseña</b></label><br>
+          <br><input type="password" class="form-control" placeholder="Contraseña" name="password1" value="{{password1}}" required> 
+	</div>
+
+	<br>
+		
+	<div>
+		<img src="{%static 'base_aspirantes/images/encabezado/contraseña.png'%}" alt="password"  align="center" width="30px" height="30px"><br><label><b>Confirmar Contraseña</b></label><br>
+          <br><input type="password" class="form-control" placeholder="Confirmar Contraseña" name="password2" value="{{password2}}" required>
+	</div>
+	<hr/>
+<a href="/login">Iniciar sesión</a>
+<br>
+<br>
+  <button class="button" type="submit" align="center" style="background-color: #DC971A;">Registrar</button>
+</div>
+<br>
+</form>
+</div></div>
+<br>
+</body>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

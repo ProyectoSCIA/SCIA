@@ -1,7 +1,6 @@
 from .administrador import Administrador
 from .clase import Clase
 from .disciplinas import Disciplinas
-from .disciplinas_cursadas import Disciplinas_Cursadas
 from .docente import Docente
 from .datos_aspirantes import Datos_Aspirantes
 from .datos_procedencia import Datos_Procedencia

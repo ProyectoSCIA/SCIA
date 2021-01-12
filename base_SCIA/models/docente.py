@@ -1,7 +1,7 @@
 from django.db import models
 
 class Docente(models.Model):
-	
+
 	Cedula_Profesional = models.CharField(
 		primary_key = True,
 		max_length=20,
@@ -14,5 +14,5 @@ class Docente(models.Model):
 	Grupo_Tutorado = models.CharField(max_length=30, 
 		)
 
-def __str__(self):
-		return '%s %s %s' % (self.Id_Aspirante, self.Cedula_Profesional, self.Tutorado)
+	def __str__(self):
+		return '%s ' % (self.Cedula_Profesional)

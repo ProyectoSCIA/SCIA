@@ -2,30 +2,25 @@ from django.db import models
 
 class Estudiante(models.Model):
 
-	Matricula = models.CharField(
+	NIA = models.CharField(
 		primary_key = True,
-		max_length = 6,
+		max_length = 8,
 		)
 
 	Id_Tutor = models.ForeignKey(
 		'Tutor',
 		on_delete=models.CASCADE,
-	)
+		)
 
 	Id_Procedencia = models.ForeignKey(
 		'Datos_Procedencia',
 		on_delete=models.CASCADE,
-	)
+		)
 	
 	Id_Cursando = models.ForeignKey(
 		'Disciplinas_Cursando',
 		on_delete=models.CASCADE,
-	)
-
-	Id_Cursadas = models.ForeignKey(
-		'Disciplinas_Cursadas',
-		on_delete=models.CASCADE,
-	)
+		)
 
 	Grado = models.IntegerField(
 		)
@@ -46,8 +41,5 @@ class Estudiante(models.Model):
 		max_digits = 5, decimal_places = 2,
 		)
 
-def __str__(self):
-		return '%s %s %s %s %s %s %s %s %s %s %s' % (self.Id_Aspirante, self.Id_Tutor,
-			self.Id_Procedencia, self.Id_Cursando, self.Id_Cursandas, self.Matricula,
-			 self.Grado, self.Grupo, self.Inscrito,
-			 self.Estatus, self.Promedio_General)
+	def __str__(self):
+		return self.NIA

@@ -57,10 +57,8 @@ class Datos_Aspirantes(models.Model):
 				max_length = 2,
 		)
 
-def __str__(self):
-				return '%s %s %s %s %s %s %s %s %s %s %s %s %s %s' % (self.Nombre, self.Apellido_Paterno, self.Apellido_Materno, 
-					self.Cargo, self.Edad, self.Genero, self.Telefono, self.Direccion, self.Codigo_Postal, 
-					self.CURP, self.Fecha_Nacimiento, self.Lugar_Nacimiento, self.Correo_Electronico, self.Grupo_Sanguineo)
+	def __str__(self):
+		return '%s %s ' % (self.Id_Personales, self.Nombre)
 
 
 

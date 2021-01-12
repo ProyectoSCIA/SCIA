@@ -1,86 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head tyle="background-color: #E1EEE9;">
+<head style="background-color: #FFFFD1;">
 		<meta charset="utf-8">
-		<title>lista de Estudiantes</title>
+		<title>lista de Aspirantes</title>
 	
 	{%load static%}
-	{%include 'encabezado2.html'%}
+	{% load bootstrap4%}
+	{% bootstrap_css %}
+	{%include 'encabezadoAs.html'%}
 	{%include 'lateral.html'%}
+	
+	{% block buscador %}
 
-<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
-
-</head>
-<body style="background-color: #018989; font-family: Roboto;">
-	<center><h2><b><i> Lista Aspirantes </i></b></h2></center>
-	<br>
-	<div class="container" >
-		<div align="center">
-			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
-				{% block content %} 
-					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
-							<br>
-							<table width="100%"  border="1" cellpadding="0" cellspacing="0"> 
-			<td> <b> Id personales</b></td>
-			<td> <b> Nombre</b></td>
-			<td> <b> Apellido Paterno</b></td>
-			<td> <b> Apellido Materno</b> </td>
-			<td>  <b> Cargo</b> </td>
-			<td>  <b> Edad</b> </td>
-			<td> <b> Genero</b> </td>
-			<td> <b> Teléfono</b> </td>
-			<td> <b> Dirección</b></td>
-			<td> <b> Código Postal</b> </h3></td>
-			<td> <b> CURP</b> </td>
-			<td> <b> Fecha Nacimiento</b> </h3></td>
-			<td> <b> Lugar Nacimiento</b> </td>
-			<td> <b> Correo Electrónico</b></td>
-			<td> <b> Grupo Sanguíneo</b></td>
-
-			{% for lista in lista %}
-			<tr> 
-					<td> {{lista.Id_Personales}} </td>
-					<td>  <p>{{lista.Nombre}} </p></td>
-					<td><p>{{lista.Apellido_Paterno}} </p></td>
-					<td><p>{{lista.Apellido_Materno}} </p></td> 
-					<td><p>{{lista.Cargo}} </p></td> 
-					<td><p>{{lista.Edad}} </p></td> 
-					<td><p>{{lista.Genero}} </p></td>  
-					<td><p>{{lista.Telefono}} </p></td> 
-					<td><p>{{lista.Direccion}} </p></td>
-					<td><p>{{lista.Codigo_Postal}} </p></td>
-					<td><p>{{lista.CURP}} </p></td>
-					<td><p>{{lista.Fecha_Nacimiento}} </p></td>
-					<td><p>{{lista.Lugar_Nacimiento}} </p></td>
-					<td><p>{{lista.Correo_Electronico}}</p></td>
-					<td><p>{{lista.Grupo_Sanguineo}} </p></td>
-					
-		
-			{% endfor %}
-		</table>
-
-							</fieldset>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<label >
-								<br>
-								<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaAdministrador'" value=" Actualizar"> 
-								&emsp;&emsp;
-								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
-							</label>
-							<br>
-							<br>
-					</form>
-					{% endblock %}
+	<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search form-control-sm " method="POST"> {% csrf_token %}
+		<div class="input-group" align="right">
+			<input type="text" class="form-control bg-light border-0 small form-control-sm" placeholder="Buscar..." name="buscaras" value="{{ request.POST.buscaras }}">
+			<div class="input-group-append" align="right">
+				<button class="btn btn-primary" type="submit" >
+					<i class="fas fa-search fa-sm"></i>
+					<input type=image src="{% static 'base_aspirantes/images/encabezado/busqueda.png'%}" width="15" height="15">
+				</button>
 			</div>
 		</div>
-	</div>
+	</form>
+	{% endblock buscador %}
 
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/tabla.css'%}" type="text/css" media="all" />
+
+</head>
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+	<center><h2><b><i> Lista Aspirantes </i></b></h2></center>
+	<br>
+	<div class="container-fluid">
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h6 class="m-0 font-weight-bold text-primary" align="center">Tabla de Datos </h6>
+			</div>
+				{% if aspirantes %}
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-sm " >
+					<tr align="center">
+						<td> <b> Id personales</b></td>
+						<td> <b> Nombre</b></td>
+						<td> <b> Apellido Paterno</b></td>
+						<td> <b> Apellido Materno</b> </td>
+						<td> <b> Cargo</b> </td>
+						<td> <b> Edad</b> </td>
+						<td> <b> Genero</b> </td>
+						<td> <b> Teléfono</b> </td>
+						<td> <b> Dirección</b></td>
+						<td> <b> Código Postal</b> </h3></td>
+						<td> <b> CURP</b> </td>
+						<td> <b> Fecha Nacimiento</b> </h3></td>
+						<td> <b> Lugar Nacimiento</b> </td>
+						<td> <b> Correo Electrónico</b></td>
+						<td> <b> Grupo Sanguíneo</b></td>
+						<td> <b> </b></td>
+					</tr>
+
+					{% for a in aspirantes %}
+					<tr>
+						<td> {{a.Id_Personales}} </td>
+						<td> {{a.Nombre}} </td>
+						<td>{{a.Apellido_Paterno}} </td>
+						<td>{{a.Apellido_Materno}} </td> 
+						<td>{{a.Cargo}}</td> 
+						<td>{{a.Edad}} </td> 
+						<td>{{a.Genero}} </td>  
+						<td>{{a.Telefono}} </td> 
+						<td>{{a.Direccion}} </td>
+						<td>{{a.Codigo_Postal}} </td>
+						<td>{{a.CURP}} </td>
+						<td>{{a.Fecha_Nacimiento}} </td>
+						<td>{{a.Lugar_Nacimiento}} </td>
+						<td>{{a.Correo_Electronico}} </td>
+						<td>{{a.Grupo_Sanguineo}} </td>
+						<td> 
+							<a class = "btn btn-primary" href=" {% url 'EditarAspirante' a.Id_Personales %}">Editar</a> 
+						</td>
+					{% endfor %}
+				</table>
+				</div>
+				{% else %}
+				<h5>No hay Registros</h5>
+				{% endif%}
+		</div>
+	</div>
 </body>
 <br>
 <br>

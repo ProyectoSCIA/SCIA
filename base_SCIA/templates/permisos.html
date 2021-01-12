@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title > SCIA </title>
+  {%load static%}
+    {% include 'encabezado.html' %}
+    {% include 'lateral.html' %}
+     <link rel="stylesheet" type="text/css" href="{% static 'base_aspirantes/css/aviso.css' %}">
+</head>
+ 
+<body>
+   <h3>Configuraciones</h3>
+   <br> 
+   <h1 align="center">PERMISOS</h1>
+   <div align="center">
+    <div class="ajustarT" align="center" style="background-color: #FFFFD1; width: 300px">
+      <form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+
+<div align="center"><h2>Estudiantes:</h2></div>
+
+<div align="center" class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="">&emsp;Lectura
+  </label>
+</div>
+<br>
+<div align="center" class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="">&emsp;Escritura
+  </label>
+ <br><br>
+</div>
+</form>
+
+      </div>
+
+</div> 
+ <div align="center">
+    <div class="ajustarT" align="center" style="background-color: #FFFFD1; width: 300px">
+      <form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+
+<div align="center"><h2>Docentes:</h2></div>
+
+<div align="center" class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="">&emsp;Lectura
+  </label>
+</div>
+<br>
+<div align="center" class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="">&emsp;Escritura (Restringido)
+  </label>
+ <br><br>
+</div>
+</form>
+      </div>
+</div> 
+ <div align="center">
+    <div class="ajustarT" align="center" style="background-color: #FFFFD1; width: 300px">
+      <form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+
+<div align="center"><h2>Administrador:</h2></div>
+
+<div align="center" class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="">&emsp;Lectura
+  </label>
+</div>
+<br>
+<div align="center" class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="">&emsp;Escritura
+  </label>
+ <br><br>
+</div>
+</form>
+      </div>
+</div> 
+
+<br>
+<br>
+<br>
+ 
+   <h1 align="center">Cambiar Contraseña</h1>
+
+
+ <div align="center">
+    <div class="ajustarT" align="center" style="background-color: #FFFFD1; width: 400px">
+      <form action="action_page.php" method="post" style="border-image: initial; border: 3px solid #DC971A">
+        <br><br>
+<label><b>Contraseña Antigua</b></label>
+  <div >
+    <img src="{%static 'base_aspirantes/images/encabezado/contraseña.png'%}" alt="contraseña"  align="center" width="25px" height="25px">
+          <input type="password" placeholder="Contraseña Antigua" name="psw" required> 
+  </div>
+
+<br><br>
+  <label><b>Nueva Contraseña</b></label>
+  <div >
+    <img src="{%static 'base_aspirantes/images/encabezado/contraseña.png'%}" alt="contraseña"  align="center" width="25px" height="25px">
+          <input type="password" placeholder="Nueva Contraseña" name="psw" required> 
+  </div>
+
+<br><br>
+  <label><b>Confirmar Contraseña</b></label>
+  <div >
+    <img src="{%static 'base_aspirantes/images/encabezado/contraseña.png'%}" alt="contraseña"  align="center" width="25px" height="25px">
+          <input type="password" placeholder="Confirmar" name="psw" required> 
+          <br>
+          <br>
+  </div> <button onclick="location.href='http://127.0.0.1:8000/home/'" type="button" class="button" align="center" style="background-color: #DC971A;">Ingresar</button>
+  <br>
+</div> 
+<br><br>
+</form>
+<br>
+      </div>
+      <br>
+</div> 
+</body>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+</html>

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head tyle="background-color: #E1EEE9;">
+<head style="background-color: #E1EEE9;">
 	<meta charset="utf-8">
 		<title>Alta Docentes</title>
 
 	{%load static%}
-	{%include 'encabezado2.html'%}
+	{%include 'encabezado.html'%}
 	{%include 'lateral.html'%}
+	{% load bootstrap4%}
+	{% bootstrap_css %}
 <link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
 <link rel="stylesheet" href="{% static 'base_aspirantes/css/AltaEstudiante.css'%}" type="text/css" media="all" />
 </head>
-<body style="background-color: #018989; font-family: Roboto;">
+<body style="background-color: #FFFFD1; font-family: Roboto;">
 	
 		<div align="center">
 				{% block content %} 
 					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 550px; border-image: initial; border: 0px solid white" >
+						<fieldset style="background-color: #FFFFD1; width: 1160px; height: 550px; border-image: initial; border: 0px solid white" >
 							<legend align="center"><h2><b><i>  Datos Docente </i></b></h2> </legend>
 							{{form}}
 							<br>

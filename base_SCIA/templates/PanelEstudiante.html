@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #E1EEE9;">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Estudiante</title>
+	
+	{%load static%}
+	{%load bootstrap4%}
+	{%include 'encabezadoE.html'%}
+	{%include 'lateral2.html'%}
+
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'base_aspirantes/css/estilo.css'%}" type="text/css" media="all"/>
+<script type="text/javascript">
+	function cambiarPestanna(pestannas,pestanna) {
+
+    pestanna = document.getElementById(pestanna.id);
+    listaPestannas = document.getElementById(pestannas.id);
+    
+
+    cpestanna = document.getElementById('c'+pestanna.id);
+    listacPestannas = document.getElementById('contenido'+pestannas.id);
+    
+    i=0;
+
+    while (typeof listacPestannas.getElementsByTagName('div')[i] != 'undefined'){
+        $(document).ready(function(){
+            $(listacPestannas.getElementsByTagName('div')[i]).css('display','none');
+             $(listaPestannas.getElementsByTagName('li')[i]).css('background','');
+            $(listaPestannas.getElementsByTagName('li')[i]).css('padding-bottom','');
+        });
+        i += 1;
+    }
+
+    $(document).ready(function(){
+        $(cpestanna).css('display','');
+		$(pestanna).css('background','#FFFFFF');
+        $(pestanna).css('padding-bottom','2px'); 
+    });
+
+}
+</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+</head>
+
+<body onload="javascript:cambiarPestanna(pestanas,pestana1);" style="font-family: Roboto;">
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<legend align="center"><h1><b>Panel Principal</b></h1></legend>
+	<legend align="left"><h2> Bienvenido: <b>{{request.user.username}}</b></h2></legend>
+	<br>
+	<div align="right" class="row">
+		<label><b>NOMBRE:</b> {{lista.Nombre}}</label>
+								
+		<label><b>NIA:</b> {{lista.NIA}}</label>
+						
+		<label><b>SEMESTRE:</b> {{lista.Grado}}</label>
+						
+		<label><b>GRUPO:</b> {{lista.Grupo}}</label>				
+	</div>					
+	<br>
+	<br>
+	<div align="right" class="row">			
+		<label><b>ESTATUS:{{lista.Estatus}}</b></label>
+							
+		<label><b>INSCRITO:{{lista.Inscrito}}</b></label>
+							
+		<label><b>PROMEDIO GENERAL:{{lista.Promedio}}</b></label>
+	</div>
+
+
+			<div id="pestanas">
+				<ul id=lista>
+					<li id="pestana1"><a href='javascript:cambiarPestanna(pestanas,pestana1);'>Disciplinas Cursadas</a></li>
+					<li id="pestana2"><a href='javascript:cambiarPestanna(pestanas,pestana2);'>Disciplinas Por Cursar</a></li>
+					<li id="pestana3"><a href='javascript:cambiarPestanna(pestanas,pestana3);'>Disciplinas Cursando</a></li>
+				</ul>
+			</div>
+
+			<div id="contenidopestanas">
+				<div id="cpestana1">
+					<table  width="100%"  border="1" > 
+						<tr align="center">
+						<td><b> #</b></td>
+						<td><b> Clave</b></td>
+						<td><b> Disciplina</b> </td>
+						<td><b> Calificacion Final</b> </td>
+						</tr>
+						{% for lista in lista %}
+						<tr align="center"> 
+							<td><p>{{lista.Nombre}} </p></td>
+							<td><p>{{lista.Apellido_Paterno}} </p></td>
+							<td><p>{{lista.Apellido_Materno}} </p></td> 
+							<td><p>{{lista.Edad}} </p></td> 	
+						</tr>
+						{% endfor %}
+					</table>
+				</div>	
+		
+				<div id="cpestana2">
+					<table  width="100%"  border="1" > 
+						<tr align="center">
+						<td><b> #</b></td>
+						<td><b> Clave</b></td>
+						<td><b> Disciplina</b> </td>
+						<td><b> Semestres</b> </td>
+						</tr>
+						{% for lista in lista %}
+						<tr align="center"> 
+							<td><p>{{lista.Nombre}} </p></td>
+							<td><p>{{lista.Apellido_Paterno}} </p></td>
+							<td><p>{{lista.Apellido_Materno}} </p></td> 
+							<td><p>{{lista.Edad}} </p></td> 	
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+				<div id="cpestana3">
+					<table  width="100%"  border="1" > 
+						<tr align="center">
+						<td><b> #</b></td>
+						<td><b> Clave</b></td>
+						<td><b> Disciplina</b> </td>
+						<td><b> Primer Momento </b> </td>
+						<td><b> Segundo Momento </b> </td>
+						<td><b> Tercer Momento</b> </td>
+						<td><b> Calificacion Final </b> </td>
+						</tr>
+						{% for lista in lista %}
+						<tr align="center"> 
+							<td><p>{{lista.Nombre}} </p></td>
+							<td><p>{{lista.Apellido_Paterno}} </p></td>
+							<td><p>{{lista.Apellido_Materno}} </p></td> 
+							<td><p>{{lista.Edad}} </p></td> 	
+							<td><p>{{lista.Apellido_Paterno}} </p></td>
+							<td><p>{{lista.Apellido_Materno}} </p></td> 
+							<td><p>{{lista.Edad}} </p></td> 						
+						</tr>
+						{% endfor %}
+					</table>
+				</div>	
+			</div>	          
+</body>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

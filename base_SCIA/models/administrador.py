@@ -14,4 +14,4 @@ class Administrador(models.Model):
 
 
 	def __str__(self): # __unicode__ en Python 2
-		return '%s ' % (self.Id_Personales)
+		return self.Id_Administrador

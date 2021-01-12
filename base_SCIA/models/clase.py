@@ -24,4 +24,4 @@ class Clase(models.Model):
 
 
 	def __str__(self):
-		return '%s %s %s' % (self.Id_Disciplina, self.Id_Docente, self.Nombre_Clase)
+		return '%s' % (self.Id_Clase)

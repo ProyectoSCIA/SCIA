@@ -4,25 +4,23 @@
 	<meta charset="UTF-8">
 	<title>Alta de Estudiantes</title>
 	
-	{%include 'encabezado2.html'%}
+	{%include 'encabezado.html'%}
 	{%load static%}
 	{%include 'lateral.html'%}
 	{% load bootstrap4%}
-
 	{% bootstrap_css %}
 	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
 </head>
 
-<body style="background-color: #018989; font-family: Roboto;">
+<body style="background-color: #FFFFD1; font-family: Roboto;">
 	<center><h2><b><i> Alta Aspirantes </i></b></h2></center>
 	<br>
 	<div class="container" >
 		<div align="center">
-			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
+			<div class="signup-form-container" style="background-color: #FFFFD1; width: 1205px; height: 640px">
 				{% block content %} 
 					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
 							<br>
 							<div class="row">
 								<div class="col">
@@ -56,7 +54,7 @@
 								</div>
 								<div class="col">
 									<label>Genero: </label>
-									<input type="text" class="form-control" name="Genero" id="Genero" required="true" placeholder="Genero M F" maxlength="1" value="{{Genero}}" style="text-transform: capitalize;">
+									<input type="text" class="form-control" name="Genero" id="Genero" required="true" placeholder="Genero M F" maxlength="1" value="{{Genero}}" style="text-transform: uppercase;">
 								</div>
 								<div class="col">
 									<label>Telefono</label>
@@ -96,10 +94,9 @@
 								</div>
 								<div class="col">
 									<label>Grupo Sanguineo:</label>
-									<input type="text" class="form-control" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" maxlength="2" placeholder="Grupo Sanguíneo" value="{{Grupo_Sanguineo}}"style="text-transform: capitalize;">
+									<input type="text" class="form-control" name="Grupo_Sanguineo" required="true" id="Grupo_Sanguineo" maxlength="2" placeholder="Grupo Sanguíneo" value="{{Grupo_Sanguineo}}"style="text-transform: uppercase;">
 								</div>
 							</div>
-							</fieldset>
 							<br>
 							<br>
 							<br>

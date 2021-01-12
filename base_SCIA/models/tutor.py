@@ -8,17 +8,16 @@ class Tutor(models.Model):
 		max_length=4,
 	)
 
-	
 	Id_Aspirante = models.ForeignKey(
 		'Datos_Aspirantes',
 		on_delete=models.CASCADE,
 	)
 
-	Nombre_Tutor  = models.CharField(
+	Nombre_Tutor = models.CharField(
 		max_length = 40,
 	)
 
-	Direccion_Tutor  = models.CharField(
+	Direccion_Tutor = models.CharField(
 		max_length = 40,
 	)
 
@@ -26,4 +25,4 @@ class Tutor(models.Model):
 	)
 
 	def __str__(self):
-		return '%s %s %s' % (self.Nombre_Tutor, self.Direccion_Tutor, self.Telefono_Tutor)
+		return '%s %s' % (self.Id_Tutor, self.Nombre_Tutor)

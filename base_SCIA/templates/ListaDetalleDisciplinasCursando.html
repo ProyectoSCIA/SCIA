@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head style="background-color: #FFFFD1;">
+		<meta charset="utf-8">
+		<title>Lista de disciplinas cursando</title>
+		
+	{%load static%}
+	{% load bootstrap4%}
+	{% bootstrap_css %}
+	{%include 'encabezadoDC.html'%}
+	{%include 'lateral.html'%}
+
+		{% block buscador %}
+
+	<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search form-control-sm " method="POST"> {% csrf_token %}
+		<div class="input-group" align="right">
+			<input type="text" class="form-control bg-light border-0 small form-control-sm" placeholder="Buscar..." name="buscardc" value="{{ request.POST.buscardc }}">
+			<div class="input-group-append" align="right">
+				<button class="btn btn-primary" type="submit" >
+					<i class="fas fa-search fa-sm"></i>
+					<input type=image src="{% static 'base_aspirantes/images/encabezado/busqueda.png'%}" width="15" height="15">
+				</button>
+			</div>
+		</div>
+	</form>
+	{% endblock buscador %}
+
+</head>
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+	<center><h2><b><i> Lista de Disciplinas Cursando</i></b></h2></center>
+	<br>
+<div class="container-fluid">
+	<div class="card shadow mb-4">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary" align="center">Tabla de Datos </h6>
+		</div>
+			{% if disciplinasc %}
+		<div class="table-responsive" >
+			<table class="table table-striped table-hover table-sm " >
+				<tr align="center">
+					<td> <b> Id Cursando</b></td>
+					<td> <b> Id Disciplina</b></td>
+					<td> <b> Calificación por Momento</b></td>
+				</tr>
+
+				{% for c in disciplinasc %}
+				<tr>
+				<td> {{c.Id_Cursando}} </td>
+				<td> {{c.Id_Disciplina}} </td>
+				<td> {{c.Momento}} </td>
+				<td> 
+					<a class = "btn btn-primary" href=" {% url 'DisciplinasCursandoEditar' c.Id_Cursando %}">Editar</a> 
+				</td>
+				{% endfor %}
+			</table>
+		</div>
+		{% else %}
+		<h5>No hay Registros</h5>
+		{% endif%}
+	</div>
+</div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

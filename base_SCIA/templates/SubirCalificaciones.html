@@ -1,0 +1,64 @@
+	<!DOCTYPE html>
+<html>
+<head style="background-color: #E1EEE9;">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Docente</title>
+	
+	{%load static%}
+	{%load bootstrap4%}
+	{%include 'encabezadoE.html'%}
+	{%include 'lateral1.html'%}
+  <script type="text/javascript" href="{% static 'base_aspirantes/js/aviso.js'%}"></script>
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+<body  style="font-family: Roboto; background-color: #FFFFD1">
+
+	<legend align="center"><h1><b>Disciplina</b></h1></legend>
+	<legend align="left"><h2> Calificación para el momento: <b>{{request.user.username}}</b></h2></legend>
+	<br>	
+	<table  width="100%"  border="1" > 
+						<tr align="center">
+						<td><b> #</b></td>
+						<td><b> NIA</b></td>
+						<td><b> ESTUDIANTE</b> </td>
+						<td><b> CALIFICACIÓN</b> </td>
+						</tr>
+						{% for lista in lista %}
+						<tr align="center"> 
+							<td><p>{{lista.Nombre}} </p></td>
+							<td><p>{{lista.Apellido_Paterno}} </p></td>
+							<td><p>{{lista.Apellido_Materno}} </p></td> 
+							<td><input type="number" class="form-control" name="momento" id="momento" required="true" placeholder="Calificación" maxlength="4" value="{{momento}}"></td> 	
+						</tr>
+						{% endfor %}
+					</table>
+	 <br>
+	 <br>
+		<a href="/home"  type="button" name="Guardar" class="button" value="Subir Calificación" align="right">Subir Calificación</a>
+</body>
+<footer>
+	{%include 'footer.html'%}
+</footer>
+</html>

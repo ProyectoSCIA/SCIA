@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head tyle="background-color: #E1EEE9;">
+<head style="background-color: #FFFFD1;">
 		<meta charset="utf-8">
-		<title>Lista de docentes</title>
+		<title>Lista de disciplinas</title>
 		
 	{%load static%}
 	{% load bootstrap4%}
 	{% bootstrap_css %}
-	{%include 'encabezado2.html'%}
+	{%include 'encabezadoDi.html'%}
 	{%include 'lateral.html'%}
 
-	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+		{% block buscador %}
+
+	<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search form-control-sm " method="POST"> {% csrf_token %}
+		<div class="input-group" align="right">
+			<input type="text" class="form-control bg-light border-0 small form-control-sm" placeholder="Buscar..." name="buscardi" value="{{ request.POST.buscardi }}">
+			<div class="input-group-append" align="right">
+				<button class="btn btn-primary" type="submit" >
+					<i class="fas fa-search fa-sm"></i>
+					<input type=image src="{% static 'base_aspirantes/images/encabezado/busqueda.png'%}" width="15" height="15">
+				</button>
+			</div>
+		</div>
+	</form>
+	{% endblock buscador %}
+
 </head>
-<body style="background-color: #018989; font-family: Roboto;">
+<body style="background-color: #FFFFD1; font-family: Roboto;">
 	<center><h2><b><i> Lista de Disciplinas</i></b></h2></center>
 	<br>
-	<div class="container" >
-		<div align="center">
-			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
-				{% block content %} 
-					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
-							<br>
-							<table class="table table-bordered"  width="100%"  border="1" cellpadding="0" cellspacing="0">
-			<td> <b> Id Disciplina</b></td>
-			<td> <b> Nombre de disciplina</b></td>
-
-			{% for listadi in listadi %}
-			<tr> 
-					<td> {{listadi.Id_Disciplina}} </td>
-					<td> {{listadi.Nombre_Disciplina}} </td>
-					<td> 
-					<a class = "btn btn-primary" href=" {% url 'DisciplinasEditar' listadi.Id_Disciplina %}">Editar</a> 
-				</td>
-			{% endfor %}
-			{% endblock %}
-		</table>
-
-							</fieldset>
-							<br>
-					</form>
-					
+	<div class="container-fluid">
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h6 class="m-0 font-weight-bold text-primary" align="center">Tabla de Datos</h6>
 			</div>
+			{% if disciplinas %}
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-sm " >
+					<tr align="center">
+						<td> <b> Id Disciplina</b></td>
+						<td> <b> Nombre de Disciplina Cursada</b></td>
+					</tr>
+
+					{% for dis in disciplinas %}
+						<tr>
+						<td> {{dis.Id_Disciplina}} </td>
+						<td> {{dis.Nombre_Disciplina}} </td>
+						<td>
+							<a class = "btn btn-primary" href="{% url 'DisciplinasEditar' dis.Id_Disciplina %}">Editar</a> 
+						</td>
+					{% endfor %}
+				</table>
+			</div>
+			{% else %}
+			<h5>No hay Registros</h5>
+			{% endif%}
 		</div>
 	</div>
 

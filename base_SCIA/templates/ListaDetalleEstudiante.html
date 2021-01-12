@@ -1,85 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head tyle="background-color: #E1EEE9;">
+<head style="background-color: #FFFFD1;">
 		<meta charset="utf-8">
-		<title>Lista de docentes</title>
+		<title>Lista de estudiantes</title>
 		
 	{%load static%}
+	{% load bootstrap4%}
+	{% bootstrap_css %}
 	{%include 'encabezado2.html'%}
 	{%include 'lateral.html'%}
 
 	<link rel="stylesheet" href="{% static 'base_aspirantes/css/boton.css'%}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'base_aspirantes/css/tabla.css'%}" type="text/css" media="all" />
 </head>
-<body style="background-color: #018989; font-family: Roboto;">
-	<center><h2><b><i> Lista Aspirantes </i></b></h2></center>
+
+{% block buscador %}
+<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search form-control-sm " method="POST">{% csrf_token %}
+	<div class="input-group" align="right">
+		<input type="text" class="form-control bg-light border-0 small form-control-sm" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+		<div class="input-group-append" align="right">
+			<button class="btn btn-primary" type="submit" >
+				<i class="fas fa-search fa-sm"></i>
+				<input type=image src="{%static 'base_aspirantes/images/encabezado/busqueda.png'%}" width="20" height="25">
+			</button>
+		</div>
+	</div>
+</form>
+
+{% endblock buscador %}
+
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+	<center><h2><b><i> Lista Estudiantes </i></b></h2></center>
 	<br>
-	<div class="container" >
-		<div align="center">
-			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 640px">
+	<div class="container-fluid">
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h6 class="m-0 font-weight-bold text-primary" align="center">Tabla de Datos Estudiantes</h6>
+			</div>
+			<div class="table-responsive ">
 				{% block content %} 
-					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 350px; border-image: initial; border: 0px solid white" >
-							<br>
-							<table width="100%"  border="1" cellpadding="0" cellspacing="0">
-			<td> <b> Matricula</b></td>
-			<td> <b> Id Tutor</b></td>
-			<td> <b> Id Procedencia</b></td>
-			<td> <b> Id Cursando</b></td>
-			<td> <b> Id Cursadas</b></td>
-			<td> <b> Grado </b></td>
-			<td> <b> Grupo </b></td>
-			<td> <b> Inscrito</b></td>
-			<td> <b> Estatus</b></td>
-			<td> <b> Promedio_General</b></td>
+				{% csrf_token %}
+				<table class="table table-striped table-hover table-sm " >
+					<td> <b> NIA</b></td>
+					<td> <b> Id Tutor</b></td>
+					<td> <b> Id Procedencia</b></td>
+					<td> <b> Id Cursando</b></td>
+					<td> <b> Grado </b></td>
+					<td> <b> Grupo </b></td>
+					<td> <b> Inscrito</b></td>
+					<td> <b> Estatus</b></td>
+					<td> <b> Promedio_General</b></td>
+					<td> <b> </b></td>
 
-
-
-			{% for listae in listae %}
-			<tr> 
-					<td> {{listae.Matricula}} </td>
-					<td>  <p>{{listae.Id_Tutor}} </p></td>
-					<td><p>{{listae.Id_Procedencia}} </p></td>
-					<td><p>{{listae.Id_Cursando}} </p></td>
-					<td><p>{{listae.Id_Cursadas}} </p></td>
-					<td><p>{{listae.Grado}} </p></td>
-					<td><p>{{listae.Grupo}} </p></td>
-					<td><p>{{listae.Inscrito}} </p></td>
-					<td><p>{{listae.Estatus}} </p></td>
-					<td><p>{{listae.Promedio_General}} </p></td>
-		
-			{% endfor %}
-		</table>
-
-							</fieldset>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<label >
-								<br>
-								<input class="button " type="button" style="background-color: #03a45e; color: white; border:1px; " onclick="location.href='http://127.0.0.1:8000/AltaAdministrador'" value=" Actualizar"> 
-								&emsp;&emsp;
-								<input class="button " type="reset" name="limpiar" value="Limpiar campos" style="background-color: #03a45e; color: white; border:1px;" onclick="Campos limpios" >
-							</label>
-							<br>
-							<br>
-					</form>
-					{% endblock %}
+					{% if object_list %}
+					{% for listae in object_list %}
+					<tr> 
+							<td> {{listae.NIA}} </td>
+							<td>  <p>{{listae.Id_Tutor}} </p></td>
+							<td><p>{{listae.Id_Procedencia}} </p></td>
+							<td><p>{{listae.Id_Cursando}} </p></td>
+							<td><p>{{listae.Grado}} </p></td>
+							<td><p>{{listae.Grupo}} </p></td>
+							<td><p>{{listae.Inscrito}} </p></td>
+							<td><p>{{listae.Estatus}} </p></td>
+							<td><p>{{listae.Promedio_General}} </p></td>
+							<td>
+							<a class = "btn btn-primary" href="{% url 'EstudianteEditar' listae.NIA %}">Editar</a> 
+						</td>
+					{% endfor %}
+					{% else %}
+					<h5>No hay Registros</h5>
+					{% endif%}
+				</table>
+				{% endblock %}
 			</div>
 		</div>
 	</div>
 
 </body>
-<br>
-<br>
-<br>
-<footer>
-	{%include 'footer.html'%}
-</footer>
-</html>
-
 <br>
 <br>
 <br>

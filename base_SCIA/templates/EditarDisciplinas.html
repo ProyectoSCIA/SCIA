@@ -14,38 +14,28 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
 </head>
 
-<body style="background-color: #018989; font-family: Roboto;">
-	<center><h2><b><i> Registrar Disciplinas </i></b></h2></center>
+<body style="background-color: #FFFFD1; font-family: Roboto;">
+	<center><h2><b><i> Alta Disciplinas </i></b></h2></center>
 	<br>
 	<div class="container" >
 		<div align="center">
-			<div class="signup-form-container" style="background-color: #018989; width: 1205px; height: 350px">
 				{% block content %} 
 					<form method="POST"> {% csrf_token %}
-						<fieldset id="fieldset1" style="background-color: #018989; width: 1160px; height: 200px; border-image: initial; border: 0px solid white" >
+						<fieldset  style="background-color: #FFFFD1; width: 1160px; height: 150px; border-image: initial; border: 0px solid white" >
 							<br>
-							<div class="row">
-								<div class="col">
-									<label> Clave Disciplina:</label>
-									<input type="text" class="form-control" name="Id_Disciplina" id="Id_Disciplina" required="true" placeholder="Clave Disciplina" maxlength="30" value="{{Id_Disciplina}}" style="text-transform: capitalize;">
-								</div>
-								<div class="col">
-									<label> Nombre Disciplina:</label>
-									<input type="text" class="form-control" name="Nombre_Disciplina" id="Nombre_Disciplina" required="true" placeholder="Nombre" maxlength="30" value="{{Nombre_Disciplina}}" style="text-transform: capitalize;">
-								</div>
-							</div>
+							{{form}}
+
 							</fieldset>
 							<label >
 								<input class="button " type="submit" name="guardar" value="Guardar Disciplina" style="background-color: #03a45e; color: white; border:1px" >
 							</label>
-								
-							</div>
+							<br>
 							<br>
 					</form>
 					{% endblock %}
 			</div>
 		</div>
-	</div>
+
 </body>
 <br>
 <br>
